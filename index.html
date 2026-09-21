@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Concept redesign della homepage CreationWeb."
+    >
+
+    <title>CreationWeb | Redesign</title>
+
+    <link
+    rel="icon"
+    type="image/png"
+    href="assets/images/creationweb-logo.png"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="assets/images/creationweb-logo.png"
+>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SKIP LINK ACCESSIBILITÀ
+    ========================== -->
+
+    <a class="skip-link" href="#main">
+        Vai al contenuto
+    </a>
+
+
+
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="container navbar">
+
+
+            <!-- LOGO TESTUALE TEMPORANEO -->
+
+            <a href="#home" class="logo" aria-label="CreationWeb - Home">
+
+                <img
+                    src="assets/images/creationweb-logo.png"
+                    alt="CreationWeb"
+                    class="brand-logo"
+                >
+            
+            </a>
+
+
+
+            <!-- NAV DESKTOP -->
+
+            <nav class="desktop-nav" aria-label="Navigazione principale">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="clienti.html">
+                    I nostri clienti
+                </a>
+
+                <a href="#metodo">
+                    Metodo
+                </a>
+
+                <a href="#chi-siamo">
+                    Chi siamo
+                </a>
+
+                <a href="#faq">
+                    FAQ
+                </a>
+
+            </nav>
+
+
+
+            <!-- CTA DESKTOP -->
+
+            <a
+                class="button button-small button-primary desktop-cta"
+                href="https://calendly.com/creationwebmail/consulenza"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Prenota una call
+            </a>
+
+
+
+            <!-- MENU MOBILE -->
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Apri menu"
+                aria-expanded="false"
+                aria-controls="mobileNav"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- NAV MOBILE -->
+
+        <nav
+            class="mobile-nav"
+            id="mobileNav"
+            aria-label="Navigazione mobile"
+        >
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="clienti.html">
+                I nostri clienti
+            </a>
+
+            <a href="#metodo">
+                Metodo
+            </a>
+
+            <a href="#chi-siamo">
+                Chi siamo
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+            <a
+                class="button button-primary"
+                href="https://calendly.com/creationwebmail/consulenza"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Prenota una call
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+
+
+    <main id="main">
+
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+
+    <div class="container hero-grid">
+
+
+        <!-- =========================
+             COLONNA SINISTRA
+        ========================== -->
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                CREATIONWEB
+
+            </div>
+
+
+            <h1>
+
+                Trasforma i tuoi social
+                in
+
+                <span class="highlight">
+                    clienti reali.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Creiamo contenuti, siti web e strategie
+                pubblicitarie che trasformano
+                l'attenzione in richieste.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    class="button button-primary"
+                    href="https://calendly.com/creationwebmail/consulenza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    Prenota una call gratuita
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="button button-secondary"
+                    href="https://api.whatsapp.com/send?phone=3518961093"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    Scrivici su WhatsApp
+
+                </a>
+
+            </div>
+
+
+            <!-- 30+ AZIENDE -->
+
+            
+
+        </div>
+
+
+        <!-- =========================
+             COLONNA DESTRA
+        ========================== -->
+
+        <div class="hero-media hero-video-real">
+
+            <div
+                class="custom-video-player"
+                id="heroVideoPlayer"
+            >
+        
+                <button
+                    class="custom-video-cover"
+                    id="heroVideoCover"
+                    type="button"
+                    aria-label="Riproduci il video di CreationWeb"
+                    style="
+                        background-image:
+                            linear-gradient(
+                                rgba(0,0,0,0.22),
+                                rgba(0,0,0,0.22)
+                            ),
+                            url('assets/images/video-cover-creationweb.webp');
+                    "
+                >
+        
+                    <span class="custom-video-glow"></span>
+        
+                    <span class="custom-video-play">
+        
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M8 5v14l11-7z"></path>
+                        </svg>
+        
+                    </span>
+        
+                </button>
+        
+        
+                <div
+                    class="video-embed"
+                    id="heroVideoEmbed"
+                ></div>
+        
+            </div>
+        
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL PROOF
+========================== -->
+
+<section class="trust-band">
+
+    <div class="container trust-band-inner">
+
+        <div class="trust-big-number">
+            30<span>+</span>
+        </div>
+
+
+        <div class="trust-band-copy">
+
+            <span class="trust-label">
+                LA FIDUCIA DEI NOSTRI CLIENTI
+            </span>
+
+            <h2>
+                Più di 30 aziende si sono già
+                <span>affidate a CreationWeb.</span>
+            </h2>
+
+            <p>
+                Strategie, contenuti e progetti digitali
+                costruiti per trasformare la presenza online
+                in risultati concreti.
+            </p>
+
+        </div>
+
+
+        <div class="trust-decoration" aria-hidden="true">
+            ↗
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =========================
+             NUMERI
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="container stats-grid">
+
+
+                    <article class="stat-card">
+                
+                        <div class="stat-icon">
+                            <i data-lucide="eye"></i>
+                        </div>
+                
+                        <strong>
+                            +20M
+                        </strong>
+                
+                        <span>
+                            Views
+                        </span>
+                
+                        <small>
+                            generate dai contenuti
+                        </small>
+                
+                    </article>
+                
+                
+                    <article class="stat-card">
+                
+                        <div class="stat-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                
+                        <strong>
+                            +70K
+                        </strong>
+                
+                        <span>
+                            Followers
+                        </span>
+                
+                        <small>
+                            ottenuti per i clienti
+                        </small>
+                
+                    </article>
+                
+                
+                    <article class="stat-card">
+                
+                        <div class="stat-icon">
+                            <i data-lucide="clapperboard"></i>
+                        </div>
+                
+                        <strong>
+                            +1000
+                        </strong>
+                
+                        <span>
+                            Reels realizzati
+                        </span>
+                
+                        <small>
+                            prodotti da CreationWeb
+                        </small>
+                
+                    </article>
+                
+                
+                    <article class="stat-card">
+                
+                        <div class="stat-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                
+                        <strong>
+                            +2000
+                        </strong>
+                
+                        <span>
+                            Richieste generate
+                        </span>
+                
+                        <small>
+                            attraverso le strategie
+                        </small>
+                
+                    </article>
+                
+                
+                </div>
+               
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             CASO STUDIO
+        ========================== -->
+
+        <section
+            class="section case-study"
+            id="caso-studio"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        UNO DEI NOSTRI CLIENTI
+
+                    </div>
+
+
+                    <h2>
+
+                        Il successo di
+                        <span>Autoscuola Cannone.</span>
+
+                    </h2>
+
+
+                    <div class="case-highlight">
+
+                        <span class="case-highlight-label">
+                            IL RISULTATO
+                        </span>
+                    
+                        <p>
+                            Da profilo quasi inesistente a oltre
+                            <strong>200 richieste in 2 mesi.</strong>
+                        </p>
+                    
+                    </div>
+
+                </div>
+
+
+
+                <div class="case-grid">
+
+
+                    <!-- IMMAGINE TEMPORANEA -->
+
+                    <div class="case-visual">
+
+                        <div class="phone-placeholder">
+
+                            <div class="phone-notch"></div>
+
+
+                            <div class="phone-screen">
+
+                                <img
+                                    src="assets/images/autoscuola-tiktok-screen.png"
+                                    alt="Profilo TikTok di Autoscuola Cannone"
+                                    class="phone-screen-image"
+                                    loading="lazy"
+                                >
+                            
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="chart-real">
+
+                            <img
+                                src="assets/images/grafico.png"
+                                alt="Panoramica dei risultati social di Autoscuola Cannone"
+                                class="chart-real-image"
+                                loading="lazy"
+                            >
+                        
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CONTENUTO -->
+
+                    <div class="case-content">
+
+
+                        <div class="case-tag">
+                            CASE STUDY
+                        </div>
+
+
+                        <h3>
+
+                            Quando i contenuti diventano
+                            risultati concreti.
+
+                        </h3>
+
+
+                        <p class="case-description">
+
+                            La strategia realizzata per Autoscuola
+                            Cannone ha trasformato una presenza social
+                            quasi inesistente in un canale capace di
+                            generare visibilità e richieste reali.
+
+                        </p>
+
+
+
+                        <div class="case-metrics">
+
+
+                            <div class="case-metric">
+
+                                <strong>
+                                    20M
+                                </strong>
+
+                                <span>
+                                    Visualizzazioni
+                                </span>
+
+                            </div>
+
+
+                            <div class="case-metric">
+
+                                <strong>
+                                    30K
+                                </strong>
+
+                                <span>
+                                    Follower totali
+                                </span>
+
+                            </div>
+
+
+                            <div class="case-metric">
+
+                                <strong>
+                                    200+
+                                </strong>
+
+                                <span>
+                                    Richieste ricevute
+                                </span>
+
+                            </div>
+
+
+                            <div class="case-metric">
+
+                                <strong>
+                                    0€
+                                </strong>
+
+                                <span>
+                                    Spesi in sponsorizzazioni
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="case-study-cta">
+                    <a class="button button-primary" href="clienti.html">
+                        Scopri tutti i nostri clienti
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div> 
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             PROBLEMI
+        ========================== -->
+
+
+        <section class="section problems">
+
+            <div class="container">
+        
+                <div class="section-heading centered">
+        
+                    <div class="eyebrow">
+        
+                        <span class="eyebrow-dot"></span>
+        
+                        IL PROBLEMA
+        
+                    </div>
+        
+                    <h2>
+                        Perché non arrivano
+                        <span>clienti?</span>
+                    </h2>
+        
+                    <p>
+                        Spesso il problema non è un singolo errore,
+                        ma una catena di passaggi sbagliati:
+                        ogni anello porta al successivo.
+                    </p>
+        
+                </div>
+        
+        
+                <div class="problem-flow">
+        
+        
+                    <!-- STEP 01 -->
+        
+                    <article class="problem-step">
+        
+                        <div class="problem-step-top">
+        
+                            <span class="problem-step-number">
+                                01
+                            </span>
+        
+                            <span class="problem-step-label">
+                                PUNTO DI PARTENZA
+                            </span>
+        
+                        </div>
+        
+        
+                        <div class="problem-step-icon">
+                            <i data-lucide="compass"></i>
+                        </div>
+        
+        
+                        <h3>
+                            Pubblichi senza strategia
+                        </h3>
+        
+        
+                        <p>
+                            I contenuti vengono pubblicati senza
+                            una direzione precisa e senza un piano
+                            costruito sugli obiettivi reali dell’attività.
+                        </p>
+        
+        
+                        <div class="problem-step-result">
+        
+                            <span>
+                                QUESTO PORTA A
+                            </span>
+        
+                            <strong>
+                                una presenza online confusa
+                            </strong>
+        
+                        </div>
+        
+                    </article>
+        
+        
+        
+                    <!-- STEP 02 -->
+        
+                    <article class="problem-step">
+        
+                        <div class="problem-step-top">
+        
+                            <span class="problem-step-number">
+                                02
+                            </span>
+        
+                            <span class="problem-step-label">
+                                EFFETTO SUCCESSIVO
+                            </span>
+        
+                        </div>
+        
+        
+                        <div class="problem-step-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+        
+        
+                        <h3>
+                            I contenuti non hanno un obiettivo
+                        </h3>
+        
+        
+                        <p>
+                            Anche se pubblichi con costanza, il contenuto
+                            non accompagna l’utente verso un’azione chiara
+                            e concreta.
+                        </p>
+        
+        
+                        <div class="problem-step-result">
+        
+                            <span>
+                                QUESTO PORTA A
+                            </span>
+        
+                            <strong>
+                                attenzione che non converte
+                            </strong>
+        
+                        </div>
+        
+                    </article>
+        
+        
+        
+                    <!-- STEP 03 -->
+        
+                    <article class="problem-step">
+        
+                        <div class="problem-step-top">
+        
+                            <span class="problem-step-number">
+                                03
+                            </span>
+        
+                            <span class="problem-step-label">
+                                CONSEGUENZA DIRETTA
+                            </span>
+        
+                        </div>
+        
+        
+                        <div class="problem-step-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+        
+        
+                        <h3>
+                            Non raggiungi il pubblico giusto
+                        </h3>
+        
+        
+                        <p>
+                            Le visualizzazioni aumentano, ma non arrivano
+                            necessariamente da persone interessate
+                            davvero al servizio.
+                        </p>
+        
+        
+                        <div class="problem-step-result">
+        
+                            <span>
+                                QUESTO PORTA A
+                            </span>
+        
+                            <strong>
+                                visibilità senza valore reale
+                            </strong>
+        
+                        </div>
+        
+                    </article>
+        
+        
+        
+                    <!-- STEP 04 -->
+        
+                    <article class="problem-step">
+        
+                        <div class="problem-step-top">
+        
+                            <span class="problem-step-number">
+                                04
+                            </span>
+        
+                            <span class="problem-step-label">
+                                RISULTATO FINALE
+                            </span>
+        
+                        </div>
+        
+        
+                        <div class="problem-step-icon">
+                            <i data-lucide="message-circle-x"></i>
+                        </div>
+        
+        
+                        <h3>
+                            L’attenzione non diventa una richiesta
+                        </h3>
+        
+        
+                        <p>
+                            Se non esiste un percorso efficace,
+                            l’interesse si ferma alla visualizzazione
+                            e non si trasforma in contatto.
+                        </p>
+        
+        
+                        <div class="problem-step-result">
+        
+                            <span>
+                                RISULTATO
+                            </span>
+        
+                            <strong>
+                                nessun cliente concreto
+                            </strong>
+        
+                        </div>
+        
+                    </article>
+        
+        
+                </div>
+        
+            </div>
+        
+        </section>
+
+
+
+
+
+        <!-- =========================
+             METODO
+        ========================== -->
+
+        <section
+            class="section method"
+            id="metodo"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading centered">
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        COME OTTENIAMO RISULTATI
+
+                    </div>
+
+
+                    <h2>
+
+                        Il metodo
+
+                        <span>
+                            CreationWeb.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Un processo costruito per trasformare
+                        contenuti e visibilità in crescita concreta.
+
+                    </p>
+
+                </div>
+
+                <div class="method-grid">
+
+
+                    <!-- 01 STRATEGIA -->
+                
+                    <article class="method-card">
+                
+                        <span class="method-bg-number">
+                            01
+                        </span>
+                
+                        <div class="method-top">
+                
+                            <div class="method-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                
+                            <span class="method-step">
+                                STEP 01
+                            </span>
+                
+                        </div>
+                
+                
+                        <h3>
+                            Strategia
+                        </h3>
+                
+                
+                        <p>
+                            Analizziamo la tua attività, il pubblico
+                            e gli obiettivi per costruire una comunicazione
+                            pensata sulle reali esigenze del brand.
+                        </p>
+                
+                
+                        <div class="method-points">
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Analisi dell'attività
+                            </span>
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Strategia personalizzata
+                            </span>
+                
+                        </div>
+                
+                    </article>
+                
+                
+                
+                    <!-- 02 PRODUZIONE VIDEO -->
+                
+                    <article class="method-card">
+                
+                        <span class="method-bg-number">
+                            02
+                        </span>
+                
+                        <div class="method-top">
+                
+                            <div class="method-icon">
+                                <i data-lucide="video"></i>
+                            </div>
+                
+                            <span class="method-step">
+                                STEP 02
+                            </span>
+                
+                        </div>
+                
+                
+                        <h3>
+                            Produzione video
+                        </h3>
+                
+                
+                        <p>
+                            Creiamo contenuti pensati per catturare
+                            l'attenzione e comunicare in modo semplice,
+                            diretto e riconoscibile.
+                        </p>
+                
+                
+                        <div class="method-points">
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Ideazione dei contenuti
+                            </span>
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Registrazione periodica
+                            </span>
+                
+                        </div>
+                
+                    </article>
+                
+                
+                
+                    <!-- 03 MONTAGGIO -->
+                
+                    <article class="method-card">
+                
+                        <span class="method-bg-number">
+                            03
+                        </span>
+                
+                        <div class="method-top">
+                
+                            <div class="method-icon">
+                                <i data-lucide="clapperboard"></i>
+                            </div>
+                
+                            <span class="method-step">
+                                STEP 03
+                            </span>
+                
+                        </div>
+                
+                
+                        <h3>
+                            Montaggio professionale
+                        </h3>
+                
+                
+                        <p>
+                            Trasformiamo il materiale registrato
+                            in contenuti dinamici, chiari e adatti
+                            al linguaggio delle piattaforme social.
+                        </p>
+                
+                
+                        <div class="method-points">
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Editing professionale
+                            </span>
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Formati ottimizzati
+                            </span>
+                
+                        </div>
+                
+                    </article>
+                
+                
+                
+                    <!-- 04 PUBBLICAZIONE -->
+                
+                    <article class="method-card">
+                
+                        <span class="method-bg-number">
+                            04
+                        </span>
+                
+                        <div class="method-top">
+                
+                            <div class="method-icon">
+                                <i data-lucide="send"></i>
+                            </div>
+                
+                            <span class="method-step">
+                                STEP 04
+                            </span>
+                
+                        </div>
+                
+                
+                        <h3>
+                            Pubblicazione multipiattaforma
+                        </h3>
+                
+                
+                        <p>
+                            Distribuiamo i contenuti sui principali
+                            canali social per aumentare le possibilità
+                            di raggiungere il pubblico giusto.
+                        </p>
+                
+                
+                        <div class="method-points">
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Instagram, TikTok e Facebook
+                            </span>
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                YouTube
+                            </span>
+                
+                        </div>
+                
+                    </article>
+                
+                
+                
+                    <!-- 05 OTTIMIZZAZIONE -->
+                
+                    <article class="method-card method-card-wide">
+                
+                        <span class="method-bg-number">
+                            05
+                        </span>
+                
+                        <div class="method-top">
+                
+                            <div class="method-icon">
+                                <i data-lucide="chart-no-axes-combined"></i>
+                            </div>
+                
+                            <span class="method-step">
+                                STEP 05
+                            </span>
+                
+                        </div>
+                
+                
+                        <h3>
+                            Ottimizzazione continua
+                        </h3>
+                
+                
+                        <p>
+                            Analizziamo le performance dei contenuti
+                            e utilizziamo i risultati per migliorare
+                            progressivamente la strategia.
+                        </p>
+                
+                
+                        <div class="method-points">
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Analisi dei risultati
+                            </span>
+                
+                            <span>
+                                <i data-lucide="check"></i>
+                                Miglioramento continuo
+                            </span>
+                
+                        </div>
+                
+                    </article>
+                
+                
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             CHI SIAMO
+        ========================== -->
+
+        <section
+            class="section about"
+            id="chi-siamo"
+        >
+
+            <div class="container about-grid">
+
+
+                <!-- FOTO DA INSERIRE DOPO -->
+
+                <div class="about-image">
+
+                    <img
+                        src="assets/images/founders-creationweb.jpg"
+                        alt="Luca Pizzuti e Giacomo Pincarelli di CreationWeb"
+                        loading="lazy"
+                    >
+                
+                </div>
+
+
+
+                <div class="about-content">
+
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        COSA C'È DIETRO CREATIONWEB
+
+                    </div>
+
+
+                    <h2>
+
+                        Esperienza sul campo.
+
+                        <span>
+                            Risultati reali.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Siamo Giacomo Pincarelli e Luca Pizzuti.
+                        Negli anni abbiamo investito tempo,
+                        risorse ed esperienza per testare strategie,
+                        analizzare dati e capire cosa funziona
+                        realmente nel mondo della comunicazione.
+
+                    </p>
+
+
+                    <p>
+
+                        CreationWeb nasce da test reali,
+                        centinaia di contenuti pubblicati e
+                        strategie perfezionate lavorando con
+                        attività appartenenti a settori differenti.
+
+                    </p>
+
+
+
+                    <div class="about-highlight">
+
+                        <span>
+                            Il nostro obiettivo
+                        </span>
+
+                        <strong>
+                            Portare risultati concreti ai clienti.
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             TESTIMONIANZE
+        ========================== -->
+
+        <section class="section testimonials">
+
+            <div class="container">
+
+
+                <div class="section-heading centered">
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        TESTIMONIANZE
+
+                    </div>
+
+
+                    <h2>
+
+                        Cosa dicono
+
+                        <span>
+                            i clienti.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Inseriremo successivamente soltanto
+                        le testimonianze reali presenti
+                        sul sito CreationWeb.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="testimonial-grid">
+
+
+                    <div class="testimonial-placeholder">
+
+                        <div class="placeholder-lines">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <p>
+                            Testimonianza reale
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial-placeholder">
+
+                        <div class="placeholder-lines">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <p>
+                            Testimonianza reale
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial-placeholder">
+
+                        <div class="placeholder-lines">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <p>
+                            Testimonianza reale
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             FAQ
+        ========================== -->
+
+        <section
+            class="section faq"
+            id="faq"
+        >
+
+            <div class="container faq-layout">
+
+
+                <div class="faq-heading">
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        FAQ
+
+                    </div>
+
+
+                    <h2>
+
+                        Domande
+
+                        <span>
+                            frequenti.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Le risposte alle domande più comuni
+                        prima di iniziare un progetto.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="faq-list">
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Quanto costa il vostro servizio?
+                        </summary>
+
+                        <p>
+
+                            Ogni attività ha esigenze diverse,
+                            quindi non esiste un prezzo unico.
+                            CreationWeb analizza la situazione
+                            dell'azienda e gli obiettivi per
+                            costruire una proposta su misura.
+
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            In quali settori lavorate?
+                        </summary>
+
+                        <p>
+
+                            CreationWeb non è specializzata in
+                            un solo settore. Il metodo viene
+                            adattato al mercato e alle esigenze
+                            dell'attività.
+
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Fate anche siti web?
+                        </summary>
+
+                        <p>
+
+                            Sì. CreationWeb realizza siti web
+                            professionali, sia siti vetrina
+                            sia e-commerce, con un approccio
+                            orientato ai risultati e
+                            all'esperienza dell'utente.
+
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Le sponsorizzazioni sono obbligatorie?
+                        </summary>
+
+                        <p>
+
+                            Dipende dall'obiettivo. I contenuti
+                            organici aiutano ad aumentare
+                            visibilità e notorietà, mentre le
+                            campagne ADV permettono di raggiungere
+                            pubblici specifici e generare contatti
+                            in modo più prevedibile.
+
+                        </p>
+
+                    </details>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- =========================
+             CTA FINALE
+        ========================== -->
+
+        <section
+            class="section final-cta"
+            id="contatti"
+        >
+
+            <div class="container">
+
+
+                <div class="cta-box">
+
+
+                    <div class="cta-content">
+
+                        <div class="eyebrow">
+
+                            <span class="eyebrow-dot"></span>
+
+                            PARLIAMO DEL TUO PROGETTO
+
+                        </div>
+
+
+                        <h2>
+
+                            La tua attività sta davvero
+                            sfruttando
+
+                            <span>
+                                i social?
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Scopri come trasformare la tua
+                            presenza online in uno strumento
+                            concreto di crescita.
+
+                        </p>
+
+
+
+                        <div class="cta-buttons">
+
+                            <a
+                                class="button button-primary"
+                                href="https://calendly.com/creationwebmail/consulenza"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                Prenota una call gratuita
+
+                            </a>
+
+
+                            <a
+                                class="button button-secondary"
+                                href="https://api.whatsapp.com/send?phone=3518961093"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                Scrivici su WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="cta-decoration">
+
+                        <span>
+                            CW
+                        </span>
+
+                    </div>
+
+                </div>
+
+<!-- =========================
+     FORM CONTATTI
+========================== -->
+
+<div class="contact-form-section">
+
+    <div class="contact-form-heading">
+
+        <span class="contact-form-kicker">
+            PREFERISCI ESSERE RICONTATTATO?
+        </span>
+
+        <h3>
+            Lasciaci i tuoi contatti.
+        </h3>
+
+        <p>
+            Ti ricontatteremo nel più breve tempo possibile.
+        </p>
+
+    </div>
+
+
+    <form
+        class="contact-form"
+        id="contactForm"
+        action="#"
+        method="post"
+    >
+
+
+        <!-- NOME -->
+
+        <div class="form-field">
+
+            <label for="nome">
+                Nome e Cognome
+                <span>*</span>
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Mario Rossi"
+                autocomplete="name"
+                required
+            >
+
+        </div>
+
+
+        <!-- TELEFONO -->
+
+        <div class="form-field">
+
+            <label for="telefono">
+                Numero di telefono
+                <span>*</span>
+            </label>
+
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="+39 333 1234567"
+                autocomplete="tel"
+                required
+            >
+
+        </div>
+
+
+        <!-- ATTIVITÀ -->
+
+        <div class="form-field form-field-full">
+
+            <label for="attivita">
+                Nome attività
+                <span>*</span>
+            </label>
+
+            <input
+                type="text"
+                id="attivita"
+                name="attivita"
+                placeholder="Nome della tua attività"
+                autocomplete="organization"
+                required
+            >
+
+        </div>
+
+
+        <!-- PRIVACY -->
+
+        <div class="privacy-consent form-field-full">
+
+            <label class="privacy-checkbox">
+
+                <input
+                    type="checkbox"
+                    name="privacy"
+                    required
+                >
+
+                <span class="custom-checkbox"></span>
+
+                <span class="privacy-text">
+
+                    Autorizzo al trattamento dei miei dati personali
+                    secondo quanto indicato nella
+
+                    <a
+                        href="https://www.iubenda.com/privacy-policy/61577490"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Privacy Policy
+                    </a>.
+
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <div class="form-submit form-field-full">
+
+            <button
+                type="submit"
+                class="button button-primary contact-submit"
+            >
+
+                Richiedi informazioni
+
+                <span aria-hidden="true">
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+</div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div>
+
+                <a href="#home" class="logo">
+
+                    <img
+                        src="assets/images/creationweb-logo.png"
+                        alt="CreationWeb"
+                        class="brand-logo"
+                    >
+                
+                </a>
+
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <a href="clienti.html">
+                    I nostri clienti
+                </a>
+
+                <a href="#metodo">
+                    Metodo
+                </a>
+
+                <a href="#chi-siamo">
+                    Chi siamo
+                </a>
+
+                <a href="#faq">
+                    FAQ
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="container footer-bottom">
+
+
+            <div class="footer-legal-data">
+        
+                <p>
+                    © 2026 CREATIONWEB
+                </p>
+        
+                <span class="footer-separator">
+                    •
+                </span>
+        
+                <p>
+                    C.F e P.IVA IT18340281007
+                </p>
+        
+            </div>
+        
+        
+            <div class="footer-policies">
+        
+                <a
+                    href="https://www.iubenda.com/privacy-policy/61577490"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Privacy Policy
+                </a>
+        
+                <a
+                    href="https://www.iubenda.com/privacy-policy/61577490/cookie-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Cookie Policy
+                </a>
+        
+            </div>
+        
+        
+        </div>
+
+    </footer>
+
+    <!-- =====================================================
+     PRIVACY CONTROLS
+===================================================== -->
+
+
+<!-- PULSANTE FISSO IN BASSO A SINISTRA -->
+
+<button
+class="privacy-floating-button"
+id="privacyFloatingButton"
+type="button"
+aria-label="Apri le preferenze relative alla privacy"
+>
+
+<span class="privacy-keyhole" aria-hidden="true"></span>
+
+</button>
+
+
+
+<!-- BARRA PRIVACY IN BASSO -->
+
+<div
+class="privacy-bottom-bar"
+aria-label="Controlli privacy"
+>
+
+<a
+    class="privacy-bottom-link"
+    href="https://www.iubenda.com/privacy-policy/61577490"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Informativa sulla raccolta
+</a>
+
+
+<button
+    class="privacy-preferences-trigger"
+    id="privacyPreferencesTrigger"
+    type="button"
+>
+
+    <span>
+        Le tue preferenze relative alla privacy
+    </span>
+
+    <span
+        class="privacy-choice-status"
+        id="privacyChoiceStatus"
+        aria-hidden="true"
+    >
+        <span class="privacy-status-yes">
+            ✓
+        </span>
+
+        <span class="privacy-status-no">
+            ×
+        </span>
+    </span>
+
+</button>
+
+</div>
+
+
+
+<!-- OVERLAY -->
+
+<div
+class="privacy-modal-overlay"
+id="privacyModalOverlay"
+aria-hidden="true"
+></div>
+
+
+
+<!-- PANNELLO PRIVACY -->
+
+<section
+class="privacy-modal"
+id="privacyModal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="privacyModalTitle"
+aria-hidden="true"
+>
+
+<div class="privacy-modal-top">
+
+    <button
+        class="privacy-modal-close"
+        id="privacyModalClose"
+        type="button"
+        aria-label="Chiudi le preferenze privacy"
+    >
+        ×
+    </button>
+
+
+    <a
+        href="https://www.iubenda.com/privacy-policy/61577490"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="privacy-policy-button"
+    >
+        Visualizza Privacy Policy completa
+    </a>
+
+</div>
+
+
+<div class="privacy-modal-content">
+
+    <span class="privacy-modal-eyebrow">
+        PRIVACY
+    </span>
+
+
+    <h2 id="privacyModalTitle">
+        Le tue preferenze relative alla privacy
+    </h2>
+
+
+    <p class="privacy-modal-intro">
+
+        Questo pannello permette di gestire alcune
+        preferenze relative al trattamento delle informazioni.
+
+        Le scelte possono essere modificate in qualsiasi
+        momento riaprendo questo pannello.
+
+    </p>
+
+
+    <div class="privacy-quick-actions">
+
+        <button
+            class="privacy-action privacy-action-secondary"
+            id="privacyRejectAll"
+            type="button"
+        >
+            ×&nbsp;&nbsp; Rifiuta tutto
+        </button>
+
+
+        <button
+            class="privacy-action privacy-action-primary"
+            id="privacyAcceptAll"
+            type="button"
+        >
+            ✓&nbsp;&nbsp; Accetta tutto
+        </button>
+
+    </div>
+
+
+    <div class="privacy-options">
+
+
+        <!-- NECESSARI -->
+
+        <div class="privacy-option">
+
+            <div>
+
+                <strong>
+                    Cookie necessari
+                </strong>
+
+                <p>
+                    Necessari per il corretto funzionamento
+                    del sito e non disattivabili.
+                </p>
+
+            </div>
+
+
+            <div class="privacy-switch privacy-switch-fixed">
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ANALYTICS -->
+
+        <div class="privacy-option">
+
+            <div>
+
+                <strong>
+                    Analisi e statistiche
+                </strong>
+
+                <p>
+                    Permettono di capire come viene utilizzato
+                    il sito e migliorarne l'esperienza.
+                </p>
+
+            </div>
+
+
+            <label class="privacy-switch">
+
+                <input
+                    type="checkbox"
+                    id="privacyAnalytics"
+                >
+
+                <span></span>
+
+            </label>
+
+        </div>
+
+
+
+        <!-- MARKETING -->
+
+        <div class="privacy-option">
+
+            <div>
+
+                <strong>
+                    Marketing
+                </strong>
+
+                <p>
+                    Tecnologie utilizzate per contenuti,
+                    campagne o servizi di marketing.
+                </p>
+
+            </div>
+
+
+            <label class="privacy-switch">
+
+                <input
+                    type="checkbox"
+                    id="privacyMarketing"
+                >
+
+                <span></span>
+
+            </label>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="privacy-modal-footer">
+
+    <button
+        class="privacy-save-button"
+        id="privacySavePreferences"
+        type="button"
+    >
+        Salva e continua
+    </button>
+
+</div>
+
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="js/script.js"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+
+</html>
