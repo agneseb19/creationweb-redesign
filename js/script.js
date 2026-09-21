@@ -1,4 +1,56 @@
 /* =====================================
+   MENU MOBILE
+====================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const mobileNav =
+        document.getElementById("mobileNav");
+
+
+    if (!mobileMenuButton || !mobileNav) {
+        return;
+    }
+
+
+    mobileMenuButton.addEventListener("click", function () {
+
+        const isOpen =
+            mobileNav.classList.toggle("open");
+
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    const mobileNavLinks =
+        mobileNav.querySelectorAll("a");
+
+
+    mobileNavLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileNav.classList.remove("open");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+});
+
+/* =====================================
    NAVBAR ACTIVE SECTION / SCROLL SPY
 ====================================== */
 
