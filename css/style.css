@@ -5690,8 +5690,10 @@ button {
         padding: 24px;
     }
 
-    .client-video-space {
-        max-width: 280px;
+    .client-phone {
+
+        width:
+            min(100%, 230px);
     }
 }
 
@@ -5855,4 +5857,110 @@ button {
         height: 180px;
         left: -80px;
     }
+}
+
+/* =========================================================
+   CLIENTI - IPHONE MOCKUP
+========================================================= */
+
+.client-phone {
+
+    position:
+        relative;
+
+    width:
+        min(100%, 270px);
+
+    aspect-ratio:
+        9 / 18.5;
+
+    justify-self:
+        center;
+
+    padding:
+        8px;
+
+    border:
+        4px solid #303030;
+
+    border-radius:
+        44px;
+
+    background:
+        #000;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55);
+
+    overflow:
+        hidden;
+}
+
+
+.client-phone-notch {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    top:
+        14px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        74px;
+
+    height:
+        20px;
+
+    border-radius:
+        999px;
+
+    background:
+        #000;
+}
+
+
+.client-phone-screen {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        34px;
+
+    background:
+        #000;
+}
+
+
+.client-phone-image {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center top;
 }
