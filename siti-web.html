@@ -4080,6 +4080,7 @@ aria-hidden="true"
     });
     
     </script>
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
 
@@ -4159,9 +4160,14 @@ aria-hidden="true"
                         rel="noopener noreferrer"
                     >
     
-                        <span class="contact-choice-icon">
-                            💬
-                        </span>
+                    <span class="contact-choice-icon">
+
+<i
+    data-lucide="message-circle"
+    aria-hidden="true"
+></i>
+
+</span>
     
                         <span>
     
@@ -4183,10 +4189,14 @@ aria-hidden="true"
                         href="mailto:creationwebmail@gmail.com?subject=Richiesta%20informazioni&body=Ciao%20CreationWeb%2C%20vorrei%20ricevere%20maggiori%20informazioni%20sui%20vostri%20servizi."
                     >
     
-                        <span class="contact-choice-icon">
-                            ✉
-                        </span>
-    
+                    <span class="contact-choice-icon">
+
+<i
+    data-lucide="mail"
+    aria-hidden="true"
+></i>
+
+</span>
                         <span>
     
                             <strong>
@@ -4212,6 +4222,9 @@ aria-hidden="true"
             contactModal
         );
     
+        if (window.lucide) {
+    lucide.createIcons();
+}
     
         function openContactModal() {
     
