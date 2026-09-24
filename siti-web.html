@@ -2169,99 +2169,108 @@ background: #111;
 }
 
 /* =========================================================
-   HERO - VERO IPHONE
+   HERO - IPHONE CON TESTO CHE CONTORNA IL MOCKUP
 ========================================================= */
 
 @media (max-width: 430px) {
 
 .sw-mobile-flow {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 155px;
-    column-gap: 18px;
-    row-gap: 0;
-    align-items: start;
+    display: flow-root;
     width: 100%;
+    margin-top: 10px;
 }
 
 
-/* TITOLO SOPRA TUTTO */
-
-.sw-mobile-title {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    width: 100%;
-    margin: 0;
-    font-size: 40px;
-    line-height: 1.07;
-}
-
-
-/* IPHONE A DESTRA, SOTTO IL TITOLO */
+/* IPHONE A DESTRA */
 
 .sw-mobile-phone {
-    float: none;
-    grid-column: 2;
-    grid-row: 2 / span 2;
-    width: 155px;
-    margin: 30px 0 0 0;
-    justify-self: end;
-    align-self: start;
+    float: right;
+    width: 160px;
+
+    margin:
+        155px
+        0
+        18px
+        16px;
 }
 
 
-/* DESCRIZIONE A SINISTRA */
+/* TITOLO */
+
+.sw-mobile-title {
+    display: block;
+    width: auto;
+    max-width: none;
+
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 1.07;
+    letter-spacing: -1.6px;
+}
+
+
+/* DESCRIZIONE */
 
 .sw-mobile-description {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 30px 0 0;
-    font-size: 13px;
-    line-height: 1.7;
+    width: auto;
+
+    margin:
+        28px
+        0
+        0;
+
+    font-size: 14px;
+    line-height: 1.75;
 }
 
 
-/* SCOPRI IL METODO SOTTO LA DESCRIZIONE */
+/* SCOPRI IL METODO:
+   segue subito la descrizione
+   e continua a contornare l'iPhone */
 
 .sw-mobile-method {
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: start;
-    margin-top: 20px;
+    display: inline-flex;
+
+    margin-top: 18px;
+    margin-bottom: 0;
 }
 
 
-/* PULSANTE SOTTO TUTTO */
+/* CTA SOTTO TUTTO */
 
 .sw-mobile-cta {
-    grid-column: 1 / -1;
-    grid-row: 4;
-    clear: none;
+    clear: both;
+
+    display: flex;
+
     width: 100%;
-    margin-top: 32px;
+
+    margin-top: 28px;
 }
 
 }
 
 
-/* IPHONE ANCORA PIÙ STRETTI */
+/* IPHONE PIÙ STRETTI */
 
 @media (max-width: 380px) {
 
-.sw-mobile-flow {
-    grid-template-columns: minmax(0, 1fr) 145px;
-    column-gap: 14px;
+.sw-mobile-phone {
+    width: 150px;
+
+    margin-top: 145px;
+    margin-left: 14px;
 }
 
-.sw-mobile-phone {
-    width: 145px;
-}
 
 .sw-mobile-title {
     font-size: 36px;
 }
 
+
 .sw-mobile-description {
-    font-size: 12.5px;
+    font-size: 13px;
 }
 
 }
