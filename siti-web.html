@@ -882,6 +882,10 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
         .sw-project-card {
 
+            display: block;
+           
+            color: inherit;
+
             min-width: 0;
 
             overflow: hidden;
@@ -895,6 +899,8 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             transition:
                 transform 0.2s ease,
                 border-color 0.2s ease;
+            
+            
 
         }
 
@@ -905,40 +911,39 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             border-color: var(--sw-accent);
 
         }
-
         .sw-project-image {
 
-            position: relative;
+position: relative;
 
-            overflow: hidden;
+overflow: hidden;
 
-            aspect-ratio: 4 / 3;
+aspect-ratio: 16 / 9;
 
-            margin: 9px;
+margin: 9px;
 
-            border-radius: 8px;
+border-radius: 8px;
 
-            background: #262626;
+background: #111;
 
-        }
+}
 
-        .sw-project-image img {
+.sw-project-image img {
 
-            position: absolute;
+position: absolute;
 
-            z-index: 2;
+z-index: 2;
 
-            inset: 0;
+inset: 0;
 
-            width: 100%;
+width: 100%;
 
-            height: 100%;
+height: 100%;
 
-            object-fit: cover;
+object-fit: contain;
 
-            object-position: top;
+object-position: center;
 
-        }
+}
 
         .sw-project-placeholder {
 
@@ -2623,270 +2628,245 @@ background: #111;
 
 
 
-                <!-- SEI PROGETTI -->
+                <!-- CINQUE PROGETTI -->
 
                 <div class="sw-project-grid">
 
 
-                    <!-- PROGETTO 1 -->
-
-                    <article class="sw-project-card">
-
+                    <!-- PROGETTO 1 - IL MELOGRANO ONLUS -->
+                
+                    <a
+    class="sw-project-card"
+    href="https://ilmelogranoonlus.it"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visita il sito Il Melograno Onlus"
+>
+                
                         <div class="sw-project-image">
-
-                            <div class="sw-project-placeholder">
-
-                                <span>01</span>
-
-                                <small>
-                                    Anteprima del progetto
-                                </small>
-
-                            </div>
-
+                
                             <img
-                                src="assets/images/siti-web/sito-1.jpg"
-                                alt="Anteprima del progetto 1"
+                                src="assets/images/siti-web/il-melograno-onlus.png"
+                                alt="Anteprima del sito Il Melograno Onlus"
                                 loading="lazy"
-                                onerror="this.style.display='none'"
                             >
-
+                
                         </div>
-
+                
                         <div class="sw-project-info">
-
+                
                             <div>
-
+                
                                 <p class="sw-project-category">
-                                    CATEGORIA DA DEFINIRE
+                                    SITO WEB
                                 </p>
-
+                
                                 <h3>
-                                    Progetto 01
+                                    Il Melograno Onlus
                                 </h3>
-
+                
                             </div>
-
+                
                             <span
-                                class="sw-project-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
+                            class="sw-project-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                
                         </div>
-
-                    </article>
-
-
-
-                    <!-- PROGETTO 2 -->
-
-                    <article class="sw-project-card">
-
+                
+                    </a>
+                
+                
+                
+                    <!-- PROGETTO 2 - JO SMASH -->
+                
+                    <a
+    class="sw-project-card"
+    href="https://josmash.it"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visita il sito Jo Smash"
+>
+                
                         <div class="sw-project-image">
-
-                            <div class="sw-project-placeholder">
-
-                                <span>02</span>
-
-                                <small>
-                                    Anteprima del progetto
-                                </small>
-
-                            </div>
-
+                
                             <img
-                                src="assets/images/siti-web/sito-2.jpg"
-                                alt="Anteprima del progetto 2"
+                                src="assets/images/siti-web/jo-smash.png"
+                                alt="Anteprima del sito Jo Smash"
                                 loading="lazy"
-                                onerror="this.style.display='none'"
                             >
-
+                
                         </div>
-
+                
                         <div class="sw-project-info">
-
+                
                             <div>
-
+                
                                 <p class="sw-project-category">
-                                    CATEGORIA DA DEFINIRE
+                                    SITO WEB
                                 </p>
-
+                
                                 <h3>
-                                    Progetto 02
+                                    Jo Smash
                                 </h3>
-
+                
                             </div>
-
+                
                             <span
-                                class="sw-project-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
+    class="sw-project-arrow"
+    aria-hidden="true"
+>
+    →
+</span>
+                
                         </div>
-
-                    </article>
-
-
-
-                    <!-- PROGETTO 3 -->
-
-                    <article class="sw-project-card">
-
+                
+                    </a>
+                
+                
+                
+                    <!-- PROGETTO 3 - LE PERLE DI FRANCESCA -->
+                
+                    <a
+    class="sw-project-card"
+    href="https://leperledifrancesca.it"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visita il sito Le Perle di Francesca"
+>
+                
                         <div class="sw-project-image">
-
-                            <div class="sw-project-placeholder">
-
-                                <span>03</span>
-
-                                <small>
-                                    Anteprima del progetto
-                                </small>
-
-                            </div>
-
+                
                             <img
-                                src="assets/images/siti-web/sito-3.jpg"
-                                alt="Anteprima del progetto 3"
+                                src="assets/images/siti-web/le-perle-di-francesca.png"
+                                alt="Anteprima del sito Le Perle di Francesca"
                                 loading="lazy"
-                                onerror="this.style.display='none'"
                             >
-
+                
                         </div>
-
+                
                         <div class="sw-project-info">
-
+                
                             <div>
-
+                
                                 <p class="sw-project-category">
-                                    CATEGORIA DA DEFINIRE
+                                    SITO WEB
                                 </p>
-
+                
                                 <h3>
-                                    Progetto 03
+                                    Le Perle di Francesca
                                 </h3>
-
+                
                             </div>
-
+                
                             <span
-                                class="sw-project-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
+    class="sw-project-arrow"
+    aria-hidden="true"
+>
+    →
+</span>
+                
                         </div>
-
-                    </article>
-
-
-
-                    <!-- PROGETTO 4 -->
-
-                    <article class="sw-project-card">
-
+                
+                    </a>
+                
+                
+                
+                    <!-- PROGETTO 4 - RAMA PISCINE -->
+                
+                    <a
+    class="sw-project-card"
+    href="https://ramapiscine.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visita il sito Rama Piscine"
+>
+                
                         <div class="sw-project-image">
-
-                            <div class="sw-project-placeholder">
-
-                                <span>04</span>
-
-                                <small>
-                                    Anteprima del progetto
-                                </small>
-
-                            </div>
-
+                
                             <img
-                                src="assets/images/siti-web/sito-4.jpg"
-                                alt="Anteprima del progetto 4"
+                                src="assets/images/siti-web/rama-piscine.png"
+                                alt="Anteprima del sito Rama Piscine"
                                 loading="lazy"
-                                onerror="this.style.display='none'"
                             >
-
+                
                         </div>
-
+                
                         <div class="sw-project-info">
-
+                
                             <div>
-
+                
                                 <p class="sw-project-category">
-                                    CATEGORIA DA DEFINIRE
+                                    SITO WEB
                                 </p>
-
+                
                                 <h3>
-                                    Progetto 04
+                                    Rama Piscine
                                 </h3>
-
+                
                             </div>
-
+                
                             <span
-                                class="sw-project-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
+    class="sw-project-arrow"
+    aria-hidden="true"
+>
+    →
+</span>
+                
                         </div>
-
-                    </article>
-
-
-
-                    <!-- PROGETTO 5 -->
-
-                    <article class="sw-project-card">
-
+                
+                    </a>
+                
+                
+                
+                    <!-- PROGETTO 5 - PRAEMEDICA -->
+                
+                    <a
+    class="sw-project-card"
+    href="https://praemedica.it"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visita il sito Praemedica"
+>
+                
                         <div class="sw-project-image">
-
-                            <div class="sw-project-placeholder">
-
-                                <span>05</span>
-
-                                <small>
-                                    Anteprima del progetto
-                                </small>
-
-                            </div>
-
+                
                             <img
-                                src="assets/images/siti-web/sito-5.jpg"
-                                alt="Anteprima del progetto 5"
+                                src="assets/images/siti-web/praemedica.png"
+                                alt="Anteprima del sito Praemedica"
                                 loading="lazy"
-                                onerror="this.style.display='none'"
                             >
-
+                
                         </div>
-
+                
                         <div class="sw-project-info">
-
+                
                             <div>
-
+                
                                 <p class="sw-project-category">
-                                    CATEGORIA DA DEFINIRE
+                                    SITO WEB
                                 </p>
-
+                
                                 <h3>
-                                    Progetto 05
+                                    Praemedica
                                 </h3>
-
+                
                             </div>
-
+                
                             <span
-                                class="sw-project-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
+    class="sw-project-arrow"
+    aria-hidden="true"
+>
+    →
+</span>
+                
                         </div>
-
-                    </article>
-
-
+                
+                    </a>
+                
+                
                 </div>
 
             </div>
