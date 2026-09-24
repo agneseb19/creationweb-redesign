@@ -826,6 +826,25 @@ button {
         hidden;
 }
 
+.hero-local-video {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 13px;
+
+    background: #000;
+
+}
 
 .custom-video-player {
 
@@ -856,6 +875,8 @@ button {
 
     inset:
         0;
+
+    z-index: 5;
 
     width:
         100%;
@@ -5931,6 +5952,27 @@ button {
 
     .client-phone {
         width: 230px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE - NASCONDI FAQ
+========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Nasconde la sezione FAQ nella homepage */
+
+    .faq {
+        display: none;
+    }
+
+
+    /* Nasconde FAQ dal menu mobile */
+
+    .mobile-nav a[href$="#faq"] {
+        display: none;
     }
 
 }

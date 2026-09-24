@@ -477,6 +477,93 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
         }
 
+        /* =========================================
+   HERO MOBILE - IPHONE
+========================================= */
+
+.sw-mobile-hero,
+.sw-mobile-cta {
+    display: none;
+}
+
+
+.sw-mobile-phone {
+
+    position: relative;
+
+    width: 138px;
+
+    flex-shrink: 0;
+
+    padding: 6px;
+
+    border: 3px solid #3c3c3c;
+
+    border-radius: 29px;
+
+    background: #050505;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.55),
+        0 0 28px rgba(218, 254, 3, 0.07);
+
+    overflow: hidden;
+
+}
+
+
+.sw-mobile-phone-notch {
+
+    position: absolute;
+
+    z-index: 4;
+
+    top: 11px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 48px;
+
+    height: 14px;
+
+    border-radius: 999px;
+
+    background: #000;
+
+}
+
+
+.sw-mobile-phone-screen {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #111;
+
+}
+
+
+.sw-mobile-phone-screen img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: top center;
+
+}
+
 
         /* ANTEPRIMA PROVVISORIA NEL MAC */
 
@@ -1632,6 +1719,95 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
             }
 
+            /* =========================================
+   HERO MOBILE
+========================================= */
+
+
+/* NASCONDE GLI ELEMENTI DESKTOP */
+
+.sw-hero .sw-hero-description,
+.sw-hero .sw-hero-actions,
+.sw-hero .sw-hero-visual {
+    display: none;
+}
+
+
+/* HERO MOBILE */
+
+.sw-mobile-hero {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        138px;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 30px;
+
+}
+
+
+.sw-mobile-hero-copy {
+
+    min-width: 0;
+
+}
+
+
+.sw-mobile-description {
+
+    margin: 0;
+
+    color: #c6c6c6;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.sw-mobile-method {
+
+    margin-top: 22px;
+
+}
+
+
+.sw-mobile-cta {
+
+    display: flex;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+}
+
+
+/* RIDUCIAMO UN PO' LA HERO */
+
+.sw-hero {
+
+    padding:
+        48px 0 55px;
+
+}
+
+
+/* TITOLO */
+
+.sw-hero-content h1 {
+
+    max-width: none;
+
+}
+
         }
 
 
@@ -1663,7 +1839,329 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
             }
 
+            .sw-mobile-hero {
+    grid-template-columns: minmax(0, 1fr) 138px;
+    column-gap: 14px;
+    row-gap: 10px;
+    align-items: start;
+}
+
+
+.sw-mobile-phone {
+    width: 138px;
+    justify-self: end;
+    align-self: start;
+    margin-top: 6px;
+}
+
+
+.sw-mobile-description {
+
+font-size: 13px;
+
+line-height: 1.65;
+
+}
+
         }
+
+/* =========================================================
+   HERO MOBILE - LAYOUT EDITORIALE CON IPHONE
+========================================================= */
+
+
+/* NASCOSTA SU DESKTOP */
+
+.sw-mobile-flow {
+    display: none;
+}
+
+
+@media (max-width: 760px) {
+
+    /* =====================================
+       HERO
+    ====================================== */
+
+    .sw-hero {
+
+        padding:
+            48px 0 45px;
+
+    }
+
+
+    .sw-hero-grid {
+
+        display: block;
+
+    }
+
+
+    /*
+       Nascondiamo soltanto gli elementi
+       della versione desktop
+    */
+
+    .sw-hero-content > h1:not(.sw-mobile-title),
+    .sw-hero-content > .sw-hero-description,
+    .sw-hero-content > .sw-hero-actions,
+    .sw-hero-visual {
+
+        display: none;
+
+    }
+
+
+    /* =====================================
+       CONTENITORE MOBILE
+    ====================================== */
+
+    .sw-mobile-flow {
+
+        display: flow-root;
+
+        width: 100%;
+
+        margin-top: 10px;
+
+    }
+
+
+    /* =====================================
+       IPHONE
+    ====================================== */
+
+    .sw-mobile-phone {
+
+        position: relative;
+
+        float: right;
+
+        width: 178px;
+
+        margin:
+            92px
+            0
+            18px
+            18px;
+
+        padding: 5px;
+
+        border:
+            3px solid #3c3c3c;
+
+        border-radius:
+            32px;
+
+        background:
+            #050505;
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.60),
+            0 0 30px rgba(218, 254, 3, 0.08);
+
+        overflow: hidden;
+
+    }
+
+
+    /* TACCA */
+
+    .sw-mobile-phone-notch {
+
+        position: absolute;
+
+        z-index: 5;
+
+        top: 11px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+        width: 52px;
+
+        height: 15px;
+
+        border-radius:
+            999px;
+
+        background:
+            #000;
+
+    }
+
+
+    /* SCHERMO */
+
+    .sw-mobile-phone-screen {
+
+width: 100%;
+
+height: auto;
+
+aspect-ratio: 882 / 1783;
+
+overflow: hidden;
+
+border-radius: 25px;
+
+background: #111;
+
+}
+
+
+    /*
+       IMPORTANTISSIMO:
+       niente object-fit cover.
+
+       L'immagine mantiene la sua
+       larghezza reale e non perde
+       le parole lateralmente.
+    */
+
+    .sw-mobile-phone-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+    /* =====================================
+       TITOLO
+    ====================================== */
+
+    .sw-mobile-title {
+
+        display: block;
+
+        max-width: none;
+
+        margin: 0;
+
+        color:
+            #ffffff;
+
+        font-size:
+            clamp(36px, 10vw, 46px);
+
+        font-weight:
+            800;
+
+        line-height:
+            1.07;
+
+        letter-spacing:
+            -1.8px;
+
+    }
+
+
+    .sw-mobile-title .sw-highlight {
+
+        color:
+            #DAFE03;
+
+    }
+
+
+    /* =====================================
+       DESCRIZIONE
+    ====================================== */
+
+    .sw-mobile-description {
+
+        margin:
+            28px 0 0;
+
+        color:
+            #c6c6c6;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    /* =====================================
+       SCOPRI IL METODO
+    ====================================== */
+
+    .sw-mobile-method {
+
+        display:
+            inline-flex;
+
+        margin-top:
+            20px;
+
+    }
+
+
+    /* =====================================
+       CTA
+    ====================================== */
+
+    .sw-mobile-cta {
+
+        clear: both;
+
+        display: flex;
+
+        width: 100%;
+
+        margin-top:
+            26px;
+
+    }
+
+}
+
+
+/* =========================================================
+   IPHONE PIÙ STRETTI
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .sw-mobile-phone {
+
+        width:
+            155px;
+
+        margin-top:
+            82px;
+
+        margin-left:
+            14px;
+
+    }
+
+
+    .sw-mobile-title {
+
+        font-size:
+            35px;
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .sw-mobile-description {
+
+        font-size:
+            13px;
+
+    }
+
+}
 
     </style>
 
@@ -1845,6 +2343,90 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
                         SITI WEB PROFESSIONALI
                     </p>
 
+                    <!-- =====================================
+     HERO MOBILE EDITORIALE
+====================================== -->
+
+<div class="sw-mobile-flow">
+
+    <!-- IPHONE -->
+
+    <div class="sw-mobile-phone">
+
+        <div class="sw-mobile-phone-notch"></div>
+
+        <div class="sw-mobile-phone-screen">
+
+            <img
+                src="assets/images/siti-web/hero-mobile.png"
+                alt="Versione mobile di un sito realizzato da CreationWeb"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- TITOLO MOBILE -->
+
+    <h1 class="sw-mobile-title">
+
+        Siti web che trasformano
+        la presenza online in
+
+        <span class="sw-highlight">
+            motori di crescita
+        </span>
+
+    </h1>
+
+
+    <!-- DESCRIZIONE MOBILE -->
+
+    <p class="sw-mobile-description">
+
+        Progettiamo siti web moderni, veloci
+        e ottimizzati per aiutare le attività
+        a trasformare la propria presenza online
+        in uno strumento concreto di crescita.
+
+    </p>
+
+
+    <!-- METODO -->
+
+    <a
+        href="#nostro-processo"
+        class="sw-method-link sw-mobile-method"
+    >
+
+        Scopri il metodo
+
+        <span aria-hidden="true">
+            →
+        </span>
+
+    </a>
+
+
+    <!-- CTA -->
+
+    <a
+        href="https://calendly.com/creationwebmail/consulenza"
+        class="sw-button sw-button-primary sw-mobile-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        Prenota una call
+
+        <span aria-hidden="true">
+            →
+        </span>
+
+    </a>
+
+</div>
 
                     <h1>
 
@@ -1853,6 +2435,8 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.07);
                         in <span class="sw-highlight">motori di crescita</span>
 
                     </h1>
+
+
 
 
                     <p class="sw-hero-description">

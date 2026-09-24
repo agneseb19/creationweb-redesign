@@ -122,7 +122,6 @@ window.addEventListener(
     { passive: true }
 );
 
-
 /* =====================================
    HERO VIDEO - AUTOPLAY + COVER
 ====================================== */
@@ -155,17 +154,17 @@ window.onYouTubeIframeAPIReady = function () {
                 videoId:
                     "PHkVk3PZrvw",
 
-                    playerVars: {
+                playerVars: {
 
-                        autoplay: 1,
-                    
-                        playsinline: 1,
-                    
-                        rel: 0,
-                    
-                        controls: 1
-                    
-                    },
+                    autoplay: 1,
+
+                    playsinline: 1,
+
+                    rel: 0,
+
+                    controls: 1
+
+                },
 
 
                 events: {
@@ -173,22 +172,18 @@ window.onYouTubeIframeAPIReady = function () {
                     onReady: function (event) {
 
                         event.target.mute();
-                    
+
                         heroVideoPlayer.classList.add(
                             "is-playing"
                         );
-                    
+
                         event.target.playVideo();
-                    
+
                     },
 
 
                     onStateChange: function (event) {
 
-
-                        /*
-                         * VIDEO IN RIPRODUZIONE
-                         */
 
                         if (
                             event.data ===
@@ -202,10 +197,6 @@ window.onYouTubeIframeAPIReady = function () {
                         }
 
 
-                        /*
-                         * VIDEO IN PAUSA
-                         */
-
                         if (
                             event.data ===
                             YT.PlayerState.PAUSED
@@ -217,10 +208,6 @@ window.onYouTubeIframeAPIReady = function () {
 
                         }
 
-
-                        /*
-                         * VIDEO FINITO
-                         */
 
                         if (
                             event.data ===
@@ -241,11 +228,6 @@ window.onYouTubeIframeAPIReady = function () {
         );
 
 
-    /*
-     * QUANDO CLICCHI SULLA COPERTINA
-     * IL VIDEO RIPARTE CON AUDIO
-     */
-
     heroVideoCover.addEventListener(
         "click",
         function () {
@@ -254,13 +236,11 @@ window.onYouTubeIframeAPIReady = function () {
                 return;
             }
 
-
             heroYoutubePlayer.unMute();
 
             heroYoutubePlayer.setVolume(100);
 
             heroYoutubePlayer.playVideo();
-
 
             heroVideoPlayer.classList.add(
                 "is-playing"
@@ -268,7 +248,6 @@ window.onYouTubeIframeAPIReady = function () {
 
         }
     );
-
 
 };
 
@@ -282,7 +261,6 @@ function enableHeroVideoSound() {
     if (!heroYoutubePlayer) {
         return;
     }
-
 
     heroYoutubePlayer.unMute();
 
@@ -315,7 +293,6 @@ document.addEventListener(
         passive: true
     }
 );
-
 
 /* =====================================
    PRIVACY CONTROLS
