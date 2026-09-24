@@ -1870,19 +1870,14 @@ line-height: 1.65;
 
         }
 
-        /* =========================================================
-   HERO MOBILE - RESPONSIVE STABILE
+ /* =========================================================
+   HERO MOBILE - TESTO CHE CONTORNA IL MOCKUP
 ========================================================= */
 
 .sw-mobile-flow {
     display: none;
 }
 
-
-/* =========================================================
-   TELEFONI GRANDI / PRO MAX
-   431px - 760px
-========================================================= */
 
 @media (max-width: 760px) {
 
@@ -1901,61 +1896,30 @@ line-height: 1.65;
         display: none;
     }
 
+
     .sw-mobile-flow {
-        display: grid;
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            175px;
-
-        grid-template-areas:
-            "title title"
-            "description phone"
-            "method phone"
-            "cta cta";
-
-        column-gap: 24px;
-        row-gap: 0;
-
-        align-items: start;
+        display: flow-root;
 
         width: 100%;
+
         margin-top: 10px;
     }
 
 
-    .sw-mobile-title {
-        grid-area: title;
-
-        margin: 0;
-
-        color: #ffffff;
-
-        font-size: 44px;
-        font-weight: 800;
-
-        line-height: 1.07;
-
-        letter-spacing: -1.8px;
-    }
-
-    .sw-mobile-title .sw-highlight {
-        color: #DAFE03;
-    }
-
+    /* MOCKUP */
 
     .sw-mobile-phone {
-        grid-area: phone;
-
         position: relative;
 
-        float: none;
+        float: right;
 
-        width: 175px;
+        width: clamp(132px, 34vw, 148px);
 
-        margin: 30px 0 0;
-
-        justify-self: end;
+        margin:
+            clamp(95px, 24vw, 108px)
+            0
+            16px
+            clamp(10px, 3vw, 14px);
 
         padding: 5px;
 
@@ -2015,138 +1979,89 @@ line-height: 1.65;
     }
 
 
-    .sw-mobile-description {
-        grid-area: description;
+    /* TITOLO */
 
-        margin: 30px 0 0;
+    .sw-mobile-title {
+        display: block;
+
+        width: auto;
+        max-width: none;
+
+        margin: 0;
+
+        color: #ffffff;
+
+        font-size: clamp(32px, 8.2vw, 35px);
+
+        font-weight: 800;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.4px;
+    }
+
+
+    .sw-mobile-title .sw-highlight {
+        color: #DAFE03;
+    }
+
+
+    /* DESCRIZIONE */
+
+    .sw-mobile-description {
+        width: auto;
+
+        margin: 26px 0 0;
 
         color: #c6c6c6;
 
-        font-size: 14px;
-        line-height: 1.75;
+        font-size: clamp(13px, 3.4vw, 14px);
+
+        line-height: 1.72;
     }
 
+
+    /* SCOPRI IL METODO */
 
     .sw-mobile-method {
-        grid-area: method;
-
         display: inline-flex;
 
-        justify-self: start;
-
-        margin-top: 20px;
+        margin-top: 18px;
+        margin-bottom: 0;
     }
 
 
+    /* CTA SOTTO TUTTO */
+
     .sw-mobile-cta {
-        grid-area: cta;
+        clear: both;
 
         display: flex;
 
         width: 100%;
 
-        margin-top: 30px;
-    }
-
-}
-
-
-/* =========================================================
-   IPHONE PRO / PRO MAX
-   fino a 480px
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .sw-mobile-flow {
-        grid-template-columns:
-            minmax(0, 1fr)
-            150px;
-
-        column-gap: 18px;
-    }
-
-
-    .sw-mobile-title {
-        font-size: 38px;
-
-        line-height: 1.07;
-
-        letter-spacing: -1.5px;
-    }
-
-
-    .sw-mobile-phone {
-        width: 150px;
-
         margin-top: 28px;
     }
 
-
-    .sw-mobile-description {
-        font-size: 13.5px;
-    }
-
 }
 
 
 /* =========================================================
-   IPHONE STANDARD
-   fino a 410px
-========================================================= */
-
-@media (max-width: 410px) {
-
-    .sw-mobile-flow {
-        grid-template-columns:
-            minmax(0, 1fr)
-            140px;
-
-        column-gap: 15px;
-    }
-
-
-    .sw-mobile-title {
-        font-size: 35px;
-    }
-
-
-    .sw-mobile-phone {
-        width: 140px;
-    }
-
-
-    .sw-mobile-description {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-}
-
-
-/* =========================================================
-   IPHONE PICCOLI
-   fino a 370px
+   IPHONE MOLTO STRETTI
 ========================================================= */
 
 @media (max-width: 370px) {
 
-    .sw-mobile-flow {
-        grid-template-columns:
-            minmax(0, 1fr)
-            125px;
+    .sw-mobile-phone {
+        width: 124px;
 
-        column-gap: 12px;
+        margin-top: 88px;
+        margin-left: 10px;
     }
 
 
     .sw-mobile-title {
-        font-size: 32px;
-    }
-
-
-    .sw-mobile-phone {
-        width: 125px;
+        font-size: 30px;
     }
 
 
