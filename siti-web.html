@@ -1870,408 +1870,289 @@ line-height: 1.65;
 
         }
 
-/* =========================================================
-   HERO MOBILE - LAYOUT EDITORIALE CON IPHONE
+        /* =========================================================
+   HERO MOBILE - RESPONSIVE STABILE
 ========================================================= */
-
-
-/* NASCOSTA SU DESKTOP */
 
 .sw-mobile-flow {
     display: none;
 }
 
 
+/* =========================================================
+   TELEFONI GRANDI / PRO MAX
+   431px - 760px
+========================================================= */
+
 @media (max-width: 760px) {
 
-    /* =====================================
-       HERO
-    ====================================== */
-
     .sw-hero {
-
-        padding:
-            48px 0 45px;
-
+        padding: 48px 0 45px;
     }
-
 
     .sw-hero-grid {
-
         display: block;
-
     }
-
-
-    /*
-       Nascondiamo soltanto gli elementi
-       della versione desktop
-    */
 
     .sw-hero-content > h1:not(.sw-mobile-title),
     .sw-hero-content > .sw-hero-description,
     .sw-hero-content > .sw-hero-actions,
     .sw-hero-visual {
-
         display: none;
-
     }
-
-
-    /* =====================================
-       CONTENITORE MOBILE
-    ====================================== */
 
     .sw-mobile-flow {
+        display: grid;
 
-        display: flow-root;
+        grid-template-columns:
+            minmax(0, 1fr)
+            175px;
+
+        grid-template-areas:
+            "title title"
+            "description phone"
+            "method phone"
+            "cta cta";
+
+        column-gap: 24px;
+        row-gap: 0;
+
+        align-items: start;
 
         width: 100%;
-
         margin-top: 10px;
-
     }
 
 
-    /* =====================================
-       IPHONE
-    ====================================== */
+    .sw-mobile-title {
+        grid-area: title;
+
+        margin: 0;
+
+        color: #ffffff;
+
+        font-size: 44px;
+        font-weight: 800;
+
+        line-height: 1.07;
+
+        letter-spacing: -1.8px;
+    }
+
+    .sw-mobile-title .sw-highlight {
+        color: #DAFE03;
+    }
+
 
     .sw-mobile-phone {
+        grid-area: phone;
 
         position: relative;
 
-        float: right;
+        float: none;
 
-        width: 178px;
+        width: 175px;
 
-        margin:
-            92px
-            0
-            18px
-            18px;
+        margin: 30px 0 0;
+
+        justify-self: end;
 
         padding: 5px;
 
-        border:
-            3px solid #3c3c3c;
+        border: 3px solid #3c3c3c;
+        border-radius: 32px;
 
-        border-radius:
-            32px;
-
-        background:
-            #050505;
+        background: #050505;
 
         box-shadow:
             0 20px 50px rgba(0, 0, 0, 0.60),
             0 0 30px rgba(218, 254, 3, 0.08);
 
         overflow: hidden;
-
     }
 
 
-    /* TACCA */
-
     .sw-mobile-phone-notch {
-
         position: absolute;
 
         z-index: 5;
 
         top: 11px;
-
         left: 50%;
 
-        transform:
-            translateX(-50%);
+        transform: translateX(-50%);
 
         width: 52px;
-
         height: 15px;
 
-        border-radius:
-            999px;
+        border-radius: 999px;
 
-        background:
-            #000;
-
+        background: #000;
     }
 
-
-    /* SCHERMO */
 
     .sw-mobile-phone-screen {
+        width: 100%;
 
-width: 100%;
+        aspect-ratio: 882 / 1783;
 
-aspect-ratio: 882 / 1783;
+        overflow: hidden;
 
-overflow: hidden;
+        border-radius: 25px;
 
-border-radius: 25px;
+        background: #111;
+    }
 
-background: #111;
-
-}
-
-
-    /*
-       IMPORTANTISSIMO:
-       niente object-fit cover.
-
-       L'immagine mantiene la sua
-       larghezza reale e non perde
-       le parole lateralmente.
-    */
 
     .sw-mobile-phone-screen img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top center;
-}
-
-
-    /* =====================================
-       TITOLO
-    ====================================== */
-
-    .sw-mobile-title {
-
         display: block;
 
-        max-width: none;
+        width: 100%;
+        height: 100%;
 
-        margin: 0;
-
-        color:
-            #ffffff;
-
-        font-size:
-            clamp(36px, 10vw, 46px);
-
-        font-weight:
-            800;
-
-        line-height:
-            1.07;
-
-        letter-spacing:
-            -1.8px;
-
+        object-fit: contain;
+        object-position: top center;
     }
 
-
-    .sw-mobile-title .sw-highlight {
-
-        color:
-            #DAFE03;
-
-    }
-
-
-    /* =====================================
-       DESCRIZIONE
-    ====================================== */
 
     .sw-mobile-description {
+        grid-area: description;
 
-        margin:
-            28px 0 0;
+        margin: 30px 0 0;
 
-        color:
-            #c6c6c6;
+        color: #c6c6c6;
 
-        font-size:
-            14px;
-
-        line-height:
-            1.75;
-
+        font-size: 14px;
+        line-height: 1.75;
     }
 
-
-    /* =====================================
-       SCOPRI IL METODO
-    ====================================== */
 
     .sw-mobile-method {
+        grid-area: method;
 
-        display:
-            inline-flex;
+        display: inline-flex;
 
-        margin-top:
-            20px;
+        justify-self: start;
 
+        margin-top: 20px;
     }
 
 
-    /* =====================================
-       CTA
-    ====================================== */
-
     .sw-mobile-cta {
-
-        clear: both;
+        grid-area: cta;
 
         display: flex;
 
         width: 100%;
 
-        margin-top:
-            26px;
-
+        margin-top: 30px;
     }
 
 }
 
 
 /* =========================================================
-   IPHONE PIÙ STRETTI
+   IPHONE PRO / PRO MAX
+   fino a 480px
 ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
-    .sw-mobile-phone {
+    .sw-mobile-flow {
+        grid-template-columns:
+            minmax(0, 1fr)
+            150px;
 
-        width:
-            155px;
-
-        margin-top:
-            82px;
-
-        margin-left:
-            14px;
-
+        column-gap: 18px;
     }
 
 
     .sw-mobile-title {
+        font-size: 38px;
 
-        font-size:
-            35px;
+        line-height: 1.07;
 
-        letter-spacing:
-            -1.5px;
+        letter-spacing: -1.5px;
+    }
 
+
+    .sw-mobile-phone {
+        width: 150px;
+
+        margin-top: 28px;
     }
 
 
     .sw-mobile-description {
-
-        font-size:
-            13px;
-
+        font-size: 13.5px;
     }
 
 }
 
+
 /* =========================================================
-   HERO - IPHONE CON TESTO CHE CONTORNA IL MOCKUP
+   IPHONE STANDARD
+   fino a 410px
 ========================================================= */
 
-@media (max-width: 430px) {
+@media (max-width: 410px) {
 
-.sw-mobile-flow {
-    display: flow-root;
-    width: 100%;
-    margin-top: 10px;
-}
+    .sw-mobile-flow {
+        grid-template-columns:
+            minmax(0, 1fr)
+            140px;
 
-
-/* IPHONE A DESTRA */
-
-.sw-mobile-phone {
-    float: right;
-    width: 140px;
-
-    margin:
-        105px
-        0
-        16px
-        12px;
-}
+        column-gap: 15px;
+    }
 
 
-/* TITOLO */
+    .sw-mobile-title {
+        font-size: 35px;
+    }
 
-.sw-mobile-title {
-    display: block;
-    width: auto;
-    max-width: none;
-
-    margin: 0;
-
-    font-size: 35px;
-    line-height: 1.08;
-    letter-spacing: -1.4px;
-}
-
-
-/* DESCRIZIONE */
-
-.sw-mobile-description {
-    width: auto;
-
-    margin:
-        28px
-        0
-        0;
-
-    font-size: 14px;
-    line-height: 1.75;
-}
-
-
-/* SCOPRI IL METODO:
-   segue subito la descrizione
-   e continua a contornare l'iPhone */
-
-.sw-mobile-method {
-    display: inline-flex;
-
-    margin-top: 18px;
-    margin-bottom: 0;
-}
-
-
-/* CTA SOTTO TUTTO */
-
-.sw-mobile-cta {
-    clear: both;
-
-    display: flex;
-
-    width: 100%;
-
-    margin-top: 28px;
-}
-
-}
-
-
-/* IPHONE PIÙ STRETTI */
-
-@media (max-width: 380px) {
 
     .sw-mobile-phone {
-    width: 132px;
+        width: 140px;
+    }
 
-    margin-top: 100px;
-    margin-left: 10px;
+
+    .sw-mobile-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
 }
 
 
-.sw-mobile-title {
-    font-size: 33px;
-}
+/* =========================================================
+   IPHONE PICCOLI
+   fino a 370px
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .sw-mobile-flow {
+        grid-template-columns:
+            minmax(0, 1fr)
+            125px;
+
+        column-gap: 12px;
+    }
 
 
-.sw-mobile-description {
-    font-size: 13px;
-}
+    .sw-mobile-title {
+        font-size: 32px;
+    }
+
+
+    .sw-mobile-phone {
+        width: 125px;
+    }
+
+
+    .sw-mobile-description {
+        font-size: 12.5px;
+    }
 
 }
 
