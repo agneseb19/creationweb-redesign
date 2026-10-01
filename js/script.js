@@ -62,10 +62,7 @@ const navigationLinks =
 
 const navigationSections = [
     "home",
-    "caso-studio",
-    "metodo",
-    "chi-siamo",
-    "faq"
+    "recensioni"
 ];
 
 

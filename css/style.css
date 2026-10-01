@@ -6422,3 +6422,75 @@ body.contact-choice-open {
         padding: 26px;
     }
 }
+
+/* RECENSIONI — LINK A GOOGLE */
+
+.cw-review-link {
+    color: inherit;
+    text-decoration: none;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.cw-review-link:hover {
+    background: #17181b;
+    border-color: var(--yellow, #DAFE03);
+}
+
+.cw-review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.cw-review-author strong {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.cw-review-author > span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.cw-review-read {
+    display: block;
+    margin-top: 20px;
+    color: var(--yellow, #DAFE03);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.cw-reviews-actions {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.cw-reviews-google-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 28px;
+    border: 1px solid var(--yellow, #DAFE03);
+    border-radius: 999px;
+    background: var(--yellow, #DAFE03);
+    color: #080808;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.cw-reviews-google-button:hover {
+    background: var(--yellow-light, #BEEC03);
+}
+
+.cw-review-link:focus-visible,
+.cw-reviews-google-button:focus-visible {
+    outline: 2px solid var(--yellow, #DAFE03);
+    outline-offset: 5px;
+}
