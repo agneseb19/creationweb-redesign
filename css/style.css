@@ -6230,3 +6230,195 @@ body.contact-choice-open {
     }
 
 }
+
+/* =========================================================
+   HOME — DICONO DI NOI
+========================================================= */
+
+.cw-reviews {
+    background: var(--black, #080808);
+    border-bottom: 1px solid var(--border);
+}
+
+.cw-reviews-heading {
+    max-width: 720px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.cw-reviews-heading .eyebrow {
+    justify-content: center;
+}
+
+.cw-reviews-heading h2 {
+    margin: 18px 0;
+    color: var(--white);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+}
+
+.cw-reviews-heading h2 span {
+    color: var(--yellow, #DAFE03);
+}
+
+.cw-reviews-heading > p {
+    max-width: 520px;
+    margin-inline: auto;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.cw-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cw-review-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin: 0;
+    padding: 30px;
+    background: var(--card, #111214);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+}
+
+.cw-review-stars {
+    margin-bottom: 22px;
+    color: var(--yellow, #DAFE03);
+    font-size: 23px;
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.cw-review-card blockquote {
+    flex: 1;
+    margin: 0 0 28px;
+}
+
+.cw-review-card blockquote p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.cw-review-card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.cw-review-card figcaption strong {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.cw-review-card figcaption span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Pulsante che apre le altre recensioni */
+
+.cw-reviews-more {
+    margin-top: 32px;
+}
+
+.cw-reviews-more > summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 16px 26px;
+    border: 1px solid var(--yellow, #DAFE03);
+    border-radius: 999px;
+    background: var(--yellow, #DAFE03);
+    color: #080808;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    list-style: none;
+}
+
+.cw-reviews-more > summary::-webkit-details-marker {
+    display: none;
+}
+
+.cw-reviews-more > summary::marker {
+    content: "";
+}
+
+.cw-reviews-more > summary:hover {
+    background: var(--yellow-light, #BEEC03);
+}
+
+.cw-reviews-more > summary:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 5px;
+}
+
+.cw-reviews-plus {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.cw-reviews-label-close {
+    display: none;
+}
+
+.cw-reviews-more[open] .cw-reviews-label-open {
+    display: none;
+}
+
+.cw-reviews-more[open] .cw-reviews-label-close {
+    display: inline;
+}
+
+.cw-reviews-more[open] .cw-reviews-plus {
+    transform: rotate(45deg);
+}
+
+.cw-reviews-extra {
+    margin-top: 32px;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+    .cw-reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Telefono */
+
+@media (max-width: 650px) {
+    .cw-reviews {
+        padding: 72px 0;
+    }
+
+    .cw-reviews-heading {
+        margin-bottom: 30px;
+    }
+
+    .cw-reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cw-review-card {
+        padding: 26px;
+    }
+}
