@@ -2248,6 +2248,193 @@ aria-hidden="true"
 
 </section>
 
+<!-- =========================================
+     COOKIE BANNER PRIMO ACCESSO
+========================================= -->
+
+<div
+    class="cookie-first-banner"
+    id="cookieFirstBanner"
+    role="dialog"
+    aria-label="Preferenze cookie"
+>
+
+   <p class="cookie-first-title">
+
+    Noi (creationweb.it) e terze parti selezionate (2)
+    raccogliamo informazioni personali come specificato nella
+
+    <a
+        href="https://www.iubenda.com/privacy-policy/61577490"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        privacy policy
+    </a>
+
+    e utilizziamo cookie o tecnologie simili per finalità tecniche e,
+    con il tuo consenso, anche per le finalità di
+    <strong>funzionalità, esperienza e misurazione</strong>
+    come specificato nella
+
+    <a
+        href="https://www.iubenda.com/privacy-policy/61577490/cookie-policy"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        cookie policy
+    </a>.
+
+</p>
+
+
+<p class="cookie-first-text">
+
+    Puoi liberamente prestare, rifiutare o revocare il tuo consenso,
+    in qualsiasi momento, accedendo al pannello delle preferenze.
+    Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+
+    <br>
+
+    Usa il pulsante “Accetta” per acconsentire.
+    Usa il pulsante “Rifiuta” per continuare senza accettare.
+
+</p>
+
+    <div class="cookie-first-actions">
+
+        <button
+            type="button"
+            class="cookie-first-button cookie-first-button-secondary"
+            id="cookieCustomize"
+        >
+            Scopri di più e personalizza
+        </button>
+
+        <button
+            type="button"
+            class="cookie-first-button cookie-first-button-primary"
+            id="cookieAccept"
+        >
+            Accetta
+        </button>
+
+    </div>
+
+    <button
+        type="button"
+        class="cookie-first-reject"
+        id="cookieReject"
+    >
+        Rifiuta
+    </button>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cookieBanner =
+        document.getElementById("cookieFirstBanner");
+
+    const cookieAccept =
+        document.getElementById("cookieAccept");
+
+    const cookieReject =
+        document.getElementById("cookieReject");
+
+    const cookieCustomize =
+        document.getElementById("cookieCustomize");
+
+
+    const savedPreferences =
+        localStorage.getItem(
+            "creationweb-privacy-preferences"
+        );
+
+
+    /* MOSTRA SOLO SE NON È STATA ANCORA FATTA UNA SCELTA */
+
+    if (!savedPreferences) {
+
+        setTimeout(function () {
+
+            cookieBanner.classList.add(
+                "is-visible"
+            );
+
+        }, 500);
+
+    }
+
+
+    /* ACCETTA */
+
+    cookieAccept.addEventListener(
+        "click",
+        function () {
+
+            const existingAccept =
+                document.getElementById(
+                    "privacyAcceptAll"
+                );
+
+            existingAccept.click();
+
+            cookieBanner.classList.remove(
+                "is-visible"
+            );
+
+        }
+    );
+
+
+    /* RIFIUTA */
+
+    cookieReject.addEventListener(
+        "click",
+        function () {
+
+            const existingReject =
+                document.getElementById(
+                    "privacyRejectAll"
+                );
+
+            existingReject.click();
+
+            cookieBanner.classList.remove(
+                "is-visible"
+            );
+
+        }
+    );
+
+
+    /* PERSONALIZZA */
+
+    cookieCustomize.addEventListener(
+        "click",
+        function () {
+
+            cookieBanner.classList.remove(
+                "is-visible"
+            );
+
+            const existingPreferences =
+                document.getElementById(
+                    "privacyPreferencesTrigger"
+                );
+
+            existingPreferences.click();
+
+        }
+    );
+
+});
+
+</script>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script src="js/script.js?v=2"></script>
