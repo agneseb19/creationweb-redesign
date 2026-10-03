@@ -7208,3 +7208,101 @@ body.contact-choice-open {
     }
 
 }
+
+/* =========================================
+   IUBENDA — TEMA CREATIONWEB
+========================================= */
+
+#iubenda-cs-banner,
+#iubenda-cs-banner * {
+    font-family: "Manrope", sans-serif !important;
+}
+
+
+/* SFONDO DEL BANNER */
+
+#iubenda-cs-banner .iubenda-cs-container,
+#iubenda-cs-banner .iubenda-cs-content,
+#iubenda-cs-banner .iubenda-cs-rationale {
+    background: #080808 !important;
+    color: #F7F7F7 !important;
+}
+
+
+/* TESTO */
+
+#iubenda-cs-banner .iubenda-banner-content,
+#iubenda-cs-banner .iubenda-banner-content p {
+    color: #F7F7F7 !important;
+}
+
+
+/* LINK PRIVACY / COOKIE */
+
+#iubenda-cs-banner .iubenda-banner-content a,
+#iubenda-cs-banner .iubenda-cs-cookie-policy-lnk {
+    color: #DAFE03 !important;
+}
+
+
+/* ACCETTA */
+
+#iubenda-cs-banner .iubenda-cs-accept-btn {
+    background: #DAFE03 !important;
+    color: #080808 !important;
+
+    border: 1px solid #DAFE03 !important;
+    border-radius: 999px !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* RIFIUTA */
+
+#iubenda-cs-banner .iubenda-cs-reject-btn {
+    background: #17181B !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #DAFE03 !important;
+    border-radius: 999px !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* SCOPRI DI PIÙ E PERSONALIZZA */
+
+#iubenda-cs-banner .iubenda-cs-customize-btn {
+    background: #17181B !important;
+    color: #DAFE03 !important;
+
+    border: 1px solid #333333 !important;
+    border-radius: 999px !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* TUTTI I PULSANTI */
+
+#iubenda-cs-banner button,
+#iubenda-cs-banner .iubenda-cs-opt-group a {
+    font-family: "Manrope", sans-serif !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    #iubenda-cs-banner .iubenda-banner-content {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+    }
+
+    #iubenda-cs-banner .iubenda-cs-opt-group button {
+        border-radius: 999px !important;
+    }
+
+}
