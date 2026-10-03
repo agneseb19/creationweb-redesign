@@ -6646,3 +6646,30 @@ body.contact-choice-open {
     color: #929292;
     font-size: 11px;
 }
+
+/* =========================================
+   FOOTER MOBILE — LOGO CENTRATO
+========================================= */
+
+@media (max-width: 760px) {
+
+    .site-footer .footer-grid,
+    body.websites-page .site-footer .footer-grid {
+        align-items: center;
+    }
+
+    .site-footer .footer-grid > div:first-child,
+    body.websites-page .site-footer .footer-logo {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site-footer .footer-logo .brand-logo,
+    .site-footer .footer-grid > div:first-child .brand-logo {
+        margin: 0 auto;
+    }
+
+}
