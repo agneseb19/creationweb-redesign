@@ -6731,3 +6731,111 @@ body.contact-choice-open {
     }
 
 }
+
+/* =========================================
+   PRIVACY MODAL — MOBILE COMPATTO
+========================================= */
+
+@media (max-width: 650px) {
+
+    .privacy-modal {
+        width: calc(100% - 44px) !important;
+        max-width: 360px !important;
+
+        max-height: 68dvh !important;
+
+        border-radius: 16px !important;
+    }
+
+    .privacy-modal-top {
+        padding: 10px 12px !important;
+        gap: 10px !important;
+    }
+
+    .privacy-modal-close {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 20px !important;
+        flex-shrink: 0;
+    }
+
+    .privacy-policy-button {
+        padding: 7px 9px !important;
+        font-size: 8px !important;
+    }
+
+    .privacy-modal-content {
+        padding: 18px 16px !important;
+        overflow-y: auto !important;
+    }
+
+    .privacy-modal-eyebrow {
+        font-size: 8px !important;
+    }
+
+    .privacy-modal-content h2 {
+        margin-top: 7px !important;
+
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.8px !important;
+    }
+
+    .privacy-modal-intro {
+        margin-top: 12px !important;
+
+        font-size: 11px !important;
+        line-height: 1.55 !important;
+    }
+
+    .privacy-quick-actions {
+        margin-top: 16px !important;
+        gap: 8px !important;
+    }
+
+    .privacy-action {
+        min-height: 40px !important;
+        padding: 0 10px !important;
+
+        font-size: 10px !important;
+    }
+
+    .privacy-options {
+        margin-top: 16px !important;
+    }
+
+    .privacy-option {
+        min-height: 0 !important;
+
+        padding: 14px 0 !important;
+
+        gap: 12px !important;
+    }
+
+    .privacy-option strong {
+        font-size: 12px !important;
+    }
+
+    .privacy-option p {
+        margin-top: 4px !important;
+
+        font-size: 10px !important;
+        line-height: 1.45 !important;
+    }
+
+    .privacy-switch {
+        width: 40px !important;
+        height: 23px !important;
+    }
+
+    .privacy-modal-footer {
+        padding: 10px 12px !important;
+    }
+
+    .privacy-save-button {
+        min-height: 42px !important;
+
+        font-size: 11px !important;
+    }
+
+}
