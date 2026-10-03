@@ -7033,3 +7033,178 @@ body.contact-choice-open {
     }
 
 }
+
+/* =========================================
+   IUBENDA — TEMA CREATIONWEB
+========================================= */
+
+
+/* FONT GENERALE */
+
+#iubenda-cs-banner,
+#iubenda-cs-banner * {
+    font-family: "Manrope", sans-serif !important;
+}
+
+
+/* BANNER */
+
+#iubenda-cs-banner .iubenda-cs-content {
+    background: #080808 !important;
+    color: #f7f7f7 !important;
+
+    border-bottom:
+        1px solid rgba(218, 254, 3, 0.16) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35) !important;
+}
+
+
+/* LARGHEZZA CONTENUTO */
+
+#iubenda-cs-banner .iubenda-cs-rationale {
+    max-width: 1180px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* TESTO */
+
+#iubenda-cs-banner .iubenda-banner-content {
+    color: #d0d0d0 !important;
+
+    line-height: 1.65 !important;
+}
+
+
+/* LINK PRIVACY / COOKIE */
+
+#iubenda-cs-banner .iubenda-banner-content a {
+    color: #DAFE03 !important;
+
+    text-decoration:
+        underline !important;
+
+    text-underline-offset:
+        3px !important;
+}
+
+
+/* PULSANTI GENERALI */
+
+#iubenda-cs-banner .iubenda-cs-opt-group button {
+
+    min-height: 44px !important;
+
+    padding:
+        10px 22px !important;
+
+    border-radius:
+        999px !important;
+
+    font-family:
+        "Manrope",
+        sans-serif !important;
+
+    font-size:
+        12px !important;
+
+    font-weight:
+        800 !important;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease !important;
+}
+
+
+#iubenda-cs-banner .iubenda-cs-opt-group button:hover {
+
+    opacity:
+        1 !important;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ACCETTA */
+
+#iubenda-cs-banner .iubenda-cs-accept-btn {
+
+    background:
+        #DAFE03 !important;
+
+    color:
+        #080808 !important;
+
+    border:
+        1px solid #DAFE03 !important;
+}
+
+
+/* RIFIUTA */
+
+#iubenda-cs-banner .iubenda-cs-reject-btn {
+
+    background:
+        #17181B !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid #DAFE03 !important;
+}
+
+
+/* PERSONALIZZA */
+
+#iubenda-cs-banner .iubenda-cs-customize-btn {
+
+    background:
+        #17181B !important;
+
+    color:
+        #DAFE03 !important;
+
+    border:
+        1px solid #3a3a3a !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    #iubenda-cs-banner .iubenda-banner-content {
+
+        font-size:
+            12px !important;
+
+        line-height:
+            1.55 !important;
+    }
+
+
+    #iubenda-cs-banner .iubenda-cs-opt-group button {
+
+        width:
+            100% !important;
+
+        min-height:
+            43px !important;
+
+        font-size:
+            11px !important;
+
+        margin:
+            5px 0 !important;
+    }
+
+}
