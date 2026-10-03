@@ -5456,28 +5456,86 @@ button {
     }
 
 
+    @media (max-width: 650px) {
+
     .privacy-modal {
+        width: calc(100% - 32px);
+        max-width: 420px;
 
-        width:
-            calc(100% - 24px);
+        max-height: 84svh;
 
-        max-height:
-            calc(100vh - 24px);
+        border-radius: 18px;
     }
-
 
     .privacy-modal-content {
-
-        padding:
-            28px 20px;
+        padding: 22px 18px;
     }
-
 
     .privacy-modal-top {
-
-        padding:
-            14px;
+        padding: 12px 14px;
     }
+
+    .privacy-policy-button {
+        font-size: 9px;
+        padding: 8px 10px;
+    }
+
+    .privacy-modal-content h2 {
+        font-size: 29px;
+        line-height: 1.08;
+        letter-spacing: -1.2px;
+    }
+
+    .privacy-modal-intro {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .privacy-quick-actions {
+        margin-top: 22px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .privacy-action {
+        width: 100%;
+        min-height: 46px;
+        font-size: 12px;
+    }
+
+    .privacy-options {
+        margin-top: 22px;
+    }
+
+    .privacy-option {
+        min-height: auto;
+        padding: 18px 0;
+
+        gap: 16px;
+    }
+
+    .privacy-option strong {
+        font-size: 13px;
+    }
+
+    .privacy-option p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .privacy-modal-footer {
+        padding: 12px 14px;
+    }
+
+    .privacy-save-button {
+        width: 100%;
+        min-height: 46px;
+    }
+
+}
 
 
     .privacy-policy-button {
