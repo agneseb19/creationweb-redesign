@@ -7306,3 +7306,209 @@ body.contact-choice-open {
     }
 
 }
+
+/* =========================================
+   BLOCK FIELD - CREATIONWEB
+========================================= */
+
+.block-transition {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+
+    background: #080808;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+}
+
+/* SCENA TRIDIMENSIONALE */
+
+.block-transition__scene {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1100px;
+
+    pointer-events: none;
+}
+
+/* GRIGLIA 3D */
+
+.block-transition__field {
+    display: grid;
+
+    grid-template-columns: repeat(16, 46px);
+    grid-template-rows: repeat(8, 46px);
+
+    gap: 7px;
+
+    transform:
+        rotateX(35deg)
+        rotateZ(-20deg)
+        scale(1.12);
+
+    transform-style: preserve-3d;
+}
+
+/* SINGOLO BLOCCO */
+
+.block-field__block {
+    position: relative;
+
+    width: 46px;
+    height: 46px;
+
+    background: #202123;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        background 0.45s ease,
+        box-shadow 0.45s ease;
+
+    will-change: transform;
+}
+
+/* SUPERFICIE SUPERIORE */
+
+.block-field__block::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,255,255,0.05);
+
+    transform: translateZ(2px);
+}
+
+/* PROFONDITÀ DEL BLOCCO */
+
+.block-field__block::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: 22px;
+
+    background: #111214;
+
+    transform-origin: top;
+    transform: rotateX(-90deg);
+}
+
+/* BLOCCO ATTIVO */
+
+.block-field__block.is-active {
+    background: #DAFE03;
+
+    box-shadow:
+        0 0 25px rgba(218,254,3,0.25),
+        0 0 65px rgba(218,254,3,0.10);
+}
+
+/* SFUMATURA DELLA SCENA */
+
+.block-transition::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(8,8,8,0.15),
+        rgba(8,8,8,0.78) 85%
+    );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CONTENUTO TESTUALE */
+
+.block-transition__content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    pointer-events: none;
+
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+/* COMPARSA ALLO SCROLL */
+
+.block-transition.is-visible
+.block-transition__content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SCRITTA PICCOLA */
+
+.block-transition__eyebrow {
+    display: block;
+
+    color: #DAFE03;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+/* TITOLO PRINCIPALE */
+
+.block-transition__content h2 {
+    color: #f7f7f7;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(44px, 6vw, 88px);
+    font-weight: 800;
+
+    line-height: 1.05;
+    letter-spacing: -3px;
+
+    margin: 0 0 25px;
+}
+
+.block-transition__content h2 span {
+    color: #DAFE03;
+}
+
+/* DESCRIZIONE */
+
+.block-transition__content p {
+    color: #b8b8b8;
+
+    font-size: 17px;
+    line-height: 1.6;
+
+    margin: 0;
+}
