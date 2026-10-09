@@ -11,9 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!section || !field) return;
 
-    const columns = 16;
-    const rows = 8;
-    const total = columns * rows;
+    const blockSize = 52;
+
+const columns = Math.ceil(section.clientWidth / blockSize) + 4;
+const rows = Math.ceil(section.clientHeight / blockSize) + 4;
+const total = columns * rows;
+
+field.style.setProperty("--block-columns", columns);
 
     const blocks = [];
 

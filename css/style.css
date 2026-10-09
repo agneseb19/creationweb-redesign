@@ -7336,6 +7336,9 @@ body.contact-choice-open {
     align-items: center;
     justify-content: center;
 
+    width: 100%;
+height: 100%;
+
     perspective: 1100px;
 
     pointer-events: none;
@@ -7346,15 +7349,14 @@ body.contact-choice-open {
 .block-transition__field {
     display: grid;
 
-    grid-template-columns: repeat(16, 46px);
-    grid-template-rows: repeat(8, 46px);
+    grid-template-columns: repeat(var(--block-columns, 20), minmax(0, 1fr));
 
-    gap: 7px;
+    gap: 5px;
 
-    transform:
-        rotateX(35deg)
-        rotateZ(-20deg)
-        scale(1.12);
+    width: 108%;
+    min-height: 110%;
+
+    transform: rotateX(12deg) scale(1.08);
 
     transform-style: preserve-3d;
 }
@@ -7364,8 +7366,9 @@ body.contact-choice-open {
 .block-field__block {
     position: relative;
 
-    width: 46px;
-    height: 46px;
+    width: 100%;
+aspect-ratio: 1 / 1;
+height: auto;
 
     background: #202123;
 
