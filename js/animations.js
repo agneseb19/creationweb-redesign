@@ -15,52 +15,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function prepareElements() {
 
-        const selectors = [
+    const selectors = [
+        ".section-heading",
+        ".trust-band-copy",
+        ".stat-card",
+        ".case-content",
+        ".case-visual",
+        ".case-highlight",
+        ".problem-step",
+        ".method-card",
+        "main section h2",
+        "main section article"
+    ];
 
-            ".section-heading",
-            ".trust-band-copy",
-            ".stat-card",
-            ".case-content",
-            ".case-visual",
-            ".case-highlight",
-            ".problem-step",
-            ".method-card",
-            ".section-heading h2",
-".section-heading p",
-"main section h2",
-"main section article"
+    const elements = document.querySelectorAll(
+        selectors.join(",")
+    );
 
-        ];
+    elements.forEach((element) => {
 
-        const elements = document.querySelectorAll(
-            selectors.join(",")
-        );
+        // Escludiamo l'animazione 3D
+        if (element.closest(".block-transition")) {
+            return;
+        }
 
-        elements.forEach((element) => {
+        // Escludiamo la hero
+        if (element.closest(".hero")) {
+            return;
+        }
 
-            // Non animiamo elementi dentro il Block Field
+        // Evitiamo animazioni annidate
+        if (
+            element.matches("h2") &&
+            element.closest(".section-heading")
+        ) {
+            return;
+        }
 
-            if (element.closest(".block-transition")) {
-                return;
-            }
+        // Evitiamo animazioni duplicate sugli article
+        if (
+            element.matches("article") &&
+            element.parentElement.closest("article")
+        ) {
+            return;
+        }
 
-            // Evitiamo animazioni duplicate annidate
+        element.classList.add("motion-reveal");
 
-if (
-    element.closest(".hero") ||
-    (
-        element.matches("h2") &&
-        element.closest(".section-heading")
-    ) ||
-    (
-        element.matches("article") &&
-        element.parentElement.closest("article")
-    )
-) {
-    return;
+    });
+
 }
-
-    }
 
     /* =====================================
        ANIMAZIONI DELLE CARD
@@ -359,23 +363,22 @@ if (
     }
 
     /* =====================================
-       INIZIALIZZAZIONE
-    ===================================== */
+   INIZIALIZZAZIONE MOTION SYSTEM
+===================================== */
 
-    prepareElements();
+prepareElements();
 
-    prepareCards();
+prepareCards();
 
-    prepareStagger();
+prepareStagger();
 
-    prepareDirections();
+prepareDirections();
 
-    prepareImages();
+prepareImages();
 
-    startRevealAnimations();
+document.body.classList.add("motion-ready");
 
-    startCounters();
+startRevealAnimations();
 
-    document.body.classList.add("motion-ready");
-
+startCounters();
 });
