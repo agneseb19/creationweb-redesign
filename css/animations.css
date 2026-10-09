@@ -148,17 +148,20 @@
 @media (max-width: 600px) {
 
     .motion-ready .motion-reveal {
-        transform: translate3d(0, 22px, 0);
+        transform: translate3d(0, 30px, 0);
+        transition-duration: 0.85s;
+    }
 
-        transition-duration: 0.65s;
+    .motion-ready .motion-left {
+        transform: translate3d(-30px, 0, 0);
+    }
+
+    .motion-ready .motion-right {
+        transform: translate3d(30px, 0, 0);
     }
 
     .motion-ready .motion-reveal.motion-visible {
         transform: translate3d(0, 0, 0);
-    }
-
-    .motion-card {
-        transform: none;
     }
 
 }
