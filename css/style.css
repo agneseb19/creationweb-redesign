@@ -598,7 +598,7 @@ button {
         relative;
 
     min-height:
-        790px;
+        700px;
 
     display:
         flex;
@@ -607,7 +607,7 @@ button {
         center;
 
     padding:
-        160px 0 90px;
+        160px 0 40px;
 
     overflow:
         hidden;
