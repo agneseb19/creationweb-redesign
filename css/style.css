@@ -7528,7 +7528,7 @@ height: auto;
     position: relative;
 
     width: 100%;
-    min-height: 650px;
+    min-height: 450px;
 
     overflow: hidden;
     isolation: isolate;
@@ -7693,7 +7693,7 @@ height: auto;
 @media (max-width: 1024px) {
 
     .block-transition {
-        min-height: 570px;
+        min-height: 420px;
     }
 
     .block-transition__content h2 {
@@ -7715,7 +7715,7 @@ height: auto;
 @media (max-width: 600px) {
 
     .block-transition {
-        min-height: 520px;
+        min-height: 380px;
     }
 
     .block-transition__scene {
