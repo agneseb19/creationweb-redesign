@@ -7795,3 +7795,10 @@ height: auto;
     }
 
 }
+
+/* TEST INTERAZIONE BANNER IUBENDA */
+
+#iubenda-cs-banner {
+    z-index: 2147483647 !important;
+    pointer-events: auto !important;
+}
