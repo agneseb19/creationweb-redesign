@@ -4,6 +4,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    console.log("BLOCK FIELD CARICATO CORRETTAMENTE");
+
     const section = document.querySelector(".block-transition");
     const field = document.getElementById("block-field");
 
