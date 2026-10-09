@@ -249,62 +249,6 @@ window.onYouTubeIframeAPIReady = function () {
 };
 
 
-/* =====================================
-   ATTIVA AUDIO AL PRIMO TAP
-====================================== */
-
-function enableHeroVideoSound(event) {
-
-    // Non interferire con il banner privacy
-    if (
-        event.target.closest(
-            "#iubenda-cs-banner, [class*='iubenda-cs']"
-        )
-    ) {
-        return;
-    }
-
-    // Verifica che il player YouTube sia pronto
-    if (
-        !heroYoutubePlayer ||
-        typeof heroYoutubePlayer.unMute !== "function" ||
-        typeof heroYoutubePlayer.setVolume !== "function"
-    ) {
-        return;
-    }
-
-    // Attiva l'audio
-    heroYoutubePlayer.unMute();
-    heroYoutubePlayer.setVolume(100);
-
-    // Rimuove gli eventi dopo l'attivazione
-    document.removeEventListener(
-        "click",
-        enableHeroVideoSound
-    );
-
-    document.removeEventListener(
-        "touchstart",
-        enableHeroVideoSound
-    );
-
-}
-
-
-document.addEventListener(
-    "click",
-    enableHeroVideoSound
-);
-
-
-document.addEventListener(
-    "touchstart",
-    enableHeroVideoSound,
-    {
-        passive: true
-    }
-);
-
 
 
 /* =====================================
