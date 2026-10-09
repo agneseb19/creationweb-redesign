@@ -1,183 +1,372 @@
-/* =====================================
-   CREATIONWEB - INTERACTIVE BLOCK FIELD
-===================================== */
+/* =========================================
+   CREATIONWEB - FLUID INTERACTIVE BLOCK FIELD
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    console.log("BLOCK FIELD CARICATO CORRETTAMENTE");
 
     const section = document.querySelector(".block-transition");
     const field = document.getElementById("block-field");
 
     if (!section || !field) return;
 
-    const blockSize = 52;
-
-const columns = Math.ceil(section.clientWidth / blockSize) + 4;
-const rows = Math.ceil(section.clientHeight / blockSize) + 4;
-const total = columns * rows;
-
-field.style.setProperty("--block-columns", columns);
-
     const blocks = [];
 
-    /* CREAZIONE BLOCCHI */
+    let columns = 0;
+    let rows = 0;
 
-    for (let i = 0; i < total; i++) {
+    let pointerX = -10000;
+    let pointerY = -10000;
 
-        const block = document.createElement("div");
+    let interacting = false;
+    let animationFrame = null;
 
-        block.classList.add("block-field__block");
+    let isVisible = true;
 
-        field.appendChild(block);
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
 
-        blocks.push(block);
+    /* =========================================
+       CONFIGURAZIONE RESPONSIVE
+    ========================================= */
+
+    function getSettings() {
+
+        const width = section.clientWidth;
+
+        if (width < 600) {
+            return {
+                blockSize: 48,
+                radius: 135,
+                maxLift: 48,
+                smoothness: 0.13
+            };
+        }
+
+        if (width < 1024) {
+            return {
+                blockSize: 55,
+                radius: 170,
+                maxLift: 65,
+                smoothness: 0.12
+            };
+        }
+
+        return {
+            blockSize: 62,
+            radius: 210,
+            maxLift: 85,
+            smoothness: 0.11
+        };
+
     }
 
-    /* INTERAZIONE CON IL MOUSE */
+    let settings = getSettings();
 
-    section.addEventListener("pointermove", (event) => {
+    /* =========================================
+       CREAZIONE GRIGLIA RESPONSIVE
+    ========================================= */
 
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
+    function createGrid() {
+
+        settings = getSettings();
+
+        const width = section.clientWidth;
+        const height = section.clientHeight;
+
+        const gap = 5;
+
+        columns = Math.ceil(
+            width / (settings.blockSize + gap)
+        );
+
+        rows = Math.ceil(
+            height / (settings.blockSize + gap)
+        );
+
+        columns = Math.max(columns, 1);
+        rows = Math.max(rows, 1);
+
+        field.innerHTML = "";
+
+        blocks.length = 0;
+
+        field.style.gridTemplateColumns =
+            `repeat(${columns}, minmax(0, 1fr))`;
+
+        field.style.gridTemplateRows =
+            `repeat(${rows}, minmax(0, 1fr))`;
+
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < columns * rows; i++) {
+
+            const element = document.createElement("div");
+
+            element.className = "block-field__block";
+
+            fragment.appendChild(element);
+
+            blocks.push({
+                element: element,
+                column: i % columns,
+                row: Math.floor(i / columns),
+                currentLift: 0,
+                targetLift: 0
+            });
+
+        }
+
+        field.appendChild(fragment);
+
+    }
+
+    /* =========================================
+       CALCOLO MOVIMENTO
+    ========================================= */
+
+    function updateTargets() {
+
+        const rect = field.getBoundingClientRect();
+
+        const cellWidth = rect.width / columns;
+        const cellHeight = rect.height / rows;
+
+        const radius = settings.radius;
 
         blocks.forEach((block) => {
 
-            const rect = block.getBoundingClientRect();
+            const centerX =
+                rect.left +
+                (block.column + 0.5) * cellWidth;
 
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+            const centerY =
+                rect.top +
+                (block.row + 0.5) * cellHeight;
 
-            const dx = mouseX - centerX;
-            const dy = mouseY - centerY;
+            const dx = pointerX - centerX;
+            const dy = pointerY - centerY;
 
-            const distance = Math.sqrt(dx * dx + dy * dy);
+            const distance = Math.hypot(dx, dy);
 
-            const radius = 190;
+            if (interacting && distance < radius) {
 
-            if (distance < radius) {
+                const normalized =
+                    1 - distance / radius;
 
-                const strength = 1 - distance / radius;
+                /* CURVA MORBIDA */
 
-                const lift = strength * 75;
+                const influence =
+                    normalized * normalized *
+                    (3 - 2 * normalized);
 
-                block.style.transform =
-                    `translateZ(${lift}px)`;
-
-                block.classList.add("is-active");
+                block.targetLift =
+                    influence * settings.maxLift;
 
             } else {
 
-                block.style.transform = "";
+                block.targetLift = 0;
 
-                block.classList.remove("is-active");
             }
 
         });
 
-    });
+    }
 
-    /* =====================================
-   INTERAZIONE TOUCH - SMARTPHONE
-===================================== */
+    /* =========================================
+       ANIMAZIONE FLUIDA
+    ========================================= */
 
-function moveBlocksWithTouch(touch) {
+    function animate() {
 
-    const mouseX = touch.clientX;
-    const mouseY = touch.clientY;
+        animationFrame = null;
 
-    blocks.forEach((block) => {
+        if (!isVisible) return;
 
-        const rect = block.getBoundingClientRect();
+        updateTargets();
 
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        const dx = mouseX - centerX;
-        const dy = mouseY - centerY;
-
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        const radius = 190;
-
-        if (distance < radius) {
-
-            const strength = 1 - distance / radius;
-
-            const lift = strength * 75;
-
-            block.style.transform =
-                `translateZ(${lift}px)`;
-
-            block.classList.add("is-active");
-
-        } else {
-
-            block.style.transform = "";
-
-            block.classList.remove("is-active");
-
-        }
-
-    });
-
-}
-
-/* TOCCO INIZIALE */
-
-section.addEventListener("touchstart", (event) => {
-
-    moveBlocksWithTouch(event.touches[0]);
-
-}, { passive: true });
-
-/* MOVIMENTO DEL DITO */
-
-section.addEventListener("touchmove", (event) => {
-
-    moveBlocksWithTouch(event.touches[0]);
-
-}, { passive: true });
-
-/* FINE DEL TOCCO */
-
-section.addEventListener("touchend", () => {
-
-    blocks.forEach((block) => {
-
-        block.style.transform = "";
-
-        block.classList.remove("is-active");
-
-    });
-
-});
-
-
-    /* RIPRISTINO QUANDO IL MOUSE ESCE */
-
-    section.addEventListener("pointerleave", () => {
+        let stillMoving = false;
 
         blocks.forEach((block) => {
 
-            block.style.transform = "";
+            const difference =
+                block.targetLift - block.currentLift;
 
-            block.classList.remove("is-active");
+            if (reducedMotion.matches) {
+
+                block.currentLift = block.targetLift;
+
+            } else {
+
+                block.currentLift +=
+                    difference * settings.smoothness;
+
+            }
+
+            if (Math.abs(difference) > 0.15) {
+                stillMoving = true;
+            }
+
+            if (
+                !interacting &&
+                block.currentLift < 0.15
+            ) {
+                block.currentLift = 0;
+            }
+
+            const lift = block.currentLift;
+
+            block.element.style.transform =
+                `translate3d(0, 0, ${lift.toFixed(2)}px)`;
+
+            block.element.classList.toggle(
+                "is-active",
+                lift > 7
+            );
 
         });
 
+        if (stillMoving) {
+            requestAnimation();
+        }
+
+    }
+
+    function requestAnimation() {
+
+        if (animationFrame !== null) return;
+
+        animationFrame =
+            window.requestAnimationFrame(animate);
+
+    }
+
+    /* =========================================
+       INTERAZIONE MOUSE
+    ========================================= */
+
+    section.addEventListener("pointermove", (event) => {
+
+        if (event.pointerType === "touch") return;
+
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+
+        interacting = true;
+
+        requestAnimation();
+
     });
 
-    /* ANIMAZIONE DI ENTRATA */
+    section.addEventListener("pointerleave", () => {
+
+        interacting = false;
+
+        requestAnimation();
+
+    });
+
+    /* =========================================
+       INTERAZIONE TOUCH
+    ========================================= */
+
+    section.addEventListener("touchstart", (event) => {
+
+        if (!event.touches.length) return;
+
+        const touch = event.touches[0];
+
+        pointerX = touch.clientX;
+        pointerY = touch.clientY;
+
+        interacting = true;
+
+        requestAnimation();
+
+    }, { passive: true });
+
+    section.addEventListener("touchmove", (event) => {
+
+        if (!event.touches.length) return;
+
+        const touch = event.touches[0];
+
+        pointerX = touch.clientX;
+        pointerY = touch.clientY;
+
+        interacting = true;
+
+        requestAnimation();
+
+    }, { passive: true });
+
+    function resetTouch() {
+
+        interacting = false;
+
+        requestAnimation();
+
+    }
+
+    section.addEventListener("touchend", resetTouch);
+    section.addEventListener("touchcancel", resetTouch);
+
+    /* =========================================
+       RESIZE AUTOMATICO
+    ========================================= */
+
+    let resizeTimer;
+
+    const resizeObserver = new ResizeObserver(() => {
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(() => {
+
+            interacting = false;
+
+            if (animationFrame !== null) {
+                cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+
+            createGrid();
+
+        }, 150);
+
+    });
+
+    resizeObserver.observe(section);
+
+    /* =========================================
+       VISIBILITÀ E ANIMAZIONE DI ENTRATA
+    ========================================= */
 
     const observer = new IntersectionObserver(
         (entries) => {
 
             entries.forEach((entry) => {
 
-                if (entry.isIntersecting) {
+                isVisible = entry.isIntersecting;
+
+                if (isVisible) {
 
                     section.classList.add("is-visible");
+
+                } else {
+
+                    interacting = false;
+
+                    blocks.forEach((block) => {
+
+                        block.currentLift = 0;
+                        block.targetLift = 0;
+
+                        block.element.style.transform = "";
+
+                        block.element.classList.remove("is-active");
+
+                    });
 
                 }
 
@@ -185,10 +374,16 @@ section.addEventListener("touchend", () => {
 
         },
         {
-            threshold: 0.2
+            threshold: 0
         }
     );
 
     observer.observe(section);
+
+    /* =========================================
+       AVVIO
+    ========================================= */
+
+    createGrid();
 
 });

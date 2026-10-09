@@ -7517,3 +7517,267 @@ height: auto;
 
     margin: 0;
 }
+
+/* =========================================
+   BLOCK FIELD - FLUID RESPONSIVE VERSION
+========================================= */
+
+/* SEZIONE PRINCIPALE */
+
+.block-transition {
+    position: relative;
+
+    width: 100%;
+    min-height: 650px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background: #080808;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    touch-action: pan-y;
+}
+
+/* SCENA 3D A TUTTA LARGHEZZA */
+
+.block-transition__scene {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    perspective: 900px;
+
+    pointer-events: none;
+}
+
+/* GRIGLIA RESPONSIVE */
+
+.block-transition__field {
+    position: absolute;
+
+    inset: -3px;
+
+    width: auto;
+    height: auto;
+    min-height: 0;
+
+    display: grid;
+
+    gap: 5px;
+
+    transform: none;
+
+    transform-style: preserve-3d;
+}
+
+/* BLOCCHI */
+
+.block-field__block {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    aspect-ratio: auto;
+
+    background: #202123;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transform-style: preserve-3d;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+
+    will-change: transform;
+}
+
+/* SUPERFICIE */
+
+.block-field__block::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            transparent 65%
+        );
+
+    transform: translateZ(2px);
+}
+
+/* PROFONDITÀ */
+
+.block-field__block::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: 16px;
+
+    background: #101112;
+
+    transform-origin: top;
+
+    transform: rotateX(-90deg);
+}
+
+/* BLOCCHI ATTIVI */
+
+.block-field__block.is-active {
+    background: #DAFE03;
+
+    box-shadow:
+        0 0 18px rgba(218,254,3,0.15),
+        0 0 40px rgba(218,254,3,0.07);
+}
+
+/* SFUMATURA */
+
+.block-transition::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(8,8,8,0.12),
+            rgba(8,8,8,0.55) 95%
+        );
+
+    pointer-events: none;
+}
+
+/* TESTI */
+
+.block-transition__content {
+    position: relative;
+    z-index: 2;
+
+    width: min(100% - 40px, 900px);
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .block-transition {
+        min-height: 570px;
+    }
+
+    .block-transition__content h2 {
+        font-size: clamp(48px, 6.5vw, 72px);
+
+        letter-spacing: -2px;
+    }
+
+    .block-transition__content p {
+        font-size: 16px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .block-transition {
+        min-height: 520px;
+    }
+
+    .block-transition__scene {
+        perspective: 700px;
+    }
+
+    .block-transition__field {
+        gap: 4px;
+    }
+
+    .block-field__block::after {
+        height: 12px;
+    }
+
+    .block-transition__content {
+        width: calc(100% - 36px);
+    }
+
+    .block-transition__eyebrow {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 24px;
+    }
+
+    .block-transition__content h2 {
+        font-size: clamp(36px, 9vw, 52px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 22px;
+    }
+
+    .block-transition__content p {
+        max-width: 320px;
+
+        margin-inline: auto;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+}
+
+/* =========================================
+   ACCESSIBILITÀ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .block-transition__content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .block-field__block {
+        transition: none;
+    }
+
+}
