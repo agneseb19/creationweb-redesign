@@ -120,13 +120,10 @@ window.addEventListener(
 );
 
 /* =====================================
-   HERO VIDEO - AUTOPLAY + COVER
-====================================== */
+   HERO VIDEO - FILE MP4 LOCALE
+===================================== */
 
-let heroYoutubePlayer = null;
-
-
-window.onYouTubeIframeAPIReady = function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     const heroVideoPlayer =
         document.getElementById("heroVideoPlayer");
@@ -134,121 +131,37 @@ window.onYouTubeIframeAPIReady = function () {
     const heroVideoCover =
         document.getElementById("heroVideoCover");
 
+    const heroVideo =
+        document.getElementById("heroVideoEmbed");
 
-    if (
-        !heroVideoPlayer ||
-        !heroVideoCover
-    ) {
+    if (!heroVideoPlayer || !heroVideoCover || !heroVideo) {
         return;
     }
 
+    // Avvia il video quando viene premuto Play
+    heroVideoCover.addEventListener("click", async function () {
 
-    heroYoutubePlayer =
-        new YT.Player(
-            "heroVideoEmbed",
-            {
+        heroVideoPlayer.classList.add("is-playing");
 
-                videoId:
-                    "PHkVk3PZrvw",
-
-                playerVars: {
-
-                    autoplay: 1,
-
-                    playsinline: 1,
-
-                    rel: 0,
-
-                    controls: 1
-
-                },
-
-
-                events: {
-
-                    onReady: function (event) {
-
-                        event.target.mute();
-
-                        heroVideoPlayer.classList.add(
-                            "is-playing"
-                        );
-
-                        event.target.playVideo();
-
-                    },
-
-
-                    onStateChange: function (event) {
-
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.PLAYING
-                        ) {
-
-                            heroVideoPlayer.classList.add(
-                                "is-playing"
-                            );
-
-                        }
-
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.PAUSED
-                        ) {
-
-                            heroVideoPlayer.classList.remove(
-                                "is-playing"
-                            );
-
-                        }
-
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.ENDED
-                        ) {
-
-                            heroVideoPlayer.classList.remove(
-                                "is-playing"
-                            );
-
-                        }
-
-                    }
-
-                }
-
-            }
-        );
-
-
-    heroVideoCover.addEventListener(
-        "click",
-        function () {
-
-            if (!heroYoutubePlayer) {
-                return;
-            }
-
-            heroYoutubePlayer.unMute();
-
-            heroYoutubePlayer.setVolume(100);
-
-            heroYoutubePlayer.playVideo();
-
-            heroVideoPlayer.classList.add(
-                "is-playing"
-            );
-
+        try {
+            await heroVideo.play();
+        } catch (error) {
+            heroVideoPlayer.classList.remove("is-playing");
+            console.error("Errore riproduzione video:", error);
         }
-    );
 
-};
+    });
 
+    // Ripristina la copertina quando il video termina
+    heroVideo.addEventListener("ended", function () {
 
+        heroVideo.currentTime = 0;
+
+        heroVideoPlayer.classList.remove("is-playing");
+
+    });
+
+});
 
 
 /* =====================================
