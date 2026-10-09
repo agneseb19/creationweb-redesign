@@ -7324,6 +7324,8 @@ body.contact-choice-open {
     justify-content: center;
 
     isolation: isolate;
+
+    touch-action: pan-y;
 }
 
 /* SCENA TRIDIMENSIONALE */

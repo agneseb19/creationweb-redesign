@@ -38,8 +38,6 @@ field.style.setProperty("--block-columns", columns);
 
     section.addEventListener("pointermove", (event) => {
 
-        if (event.pointerType === "touch") return;
-
         const mouseX = event.clientX;
         const mouseY = event.clientY;
 
@@ -78,6 +76,83 @@ field.style.setProperty("--block-columns", columns);
         });
 
     });
+
+    /* =====================================
+   INTERAZIONE TOUCH - SMARTPHONE
+===================================== */
+
+function moveBlocksWithTouch(touch) {
+
+    const mouseX = touch.clientX;
+    const mouseY = touch.clientY;
+
+    blocks.forEach((block) => {
+
+        const rect = block.getBoundingClientRect();
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const dx = mouseX - centerX;
+        const dy = mouseY - centerY;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const radius = 190;
+
+        if (distance < radius) {
+
+            const strength = 1 - distance / radius;
+
+            const lift = strength * 75;
+
+            block.style.transform =
+                `translateZ(${lift}px)`;
+
+            block.classList.add("is-active");
+
+        } else {
+
+            block.style.transform = "";
+
+            block.classList.remove("is-active");
+
+        }
+
+    });
+
+}
+
+/* TOCCO INIZIALE */
+
+section.addEventListener("touchstart", (event) => {
+
+    moveBlocksWithTouch(event.touches[0]);
+
+}, { passive: true });
+
+/* MOVIMENTO DEL DITO */
+
+section.addEventListener("touchmove", (event) => {
+
+    moveBlocksWithTouch(event.touches[0]);
+
+}, { passive: true });
+
+/* FINE DEL TOCCO */
+
+section.addEventListener("touchend", () => {
+
+    blocks.forEach((block) => {
+
+        block.style.transform = "";
+
+        block.classList.remove("is-active");
+
+    });
+
+});
+
 
     /* RIPRISTINO QUANDO IL MOUSE ESCE */
 
