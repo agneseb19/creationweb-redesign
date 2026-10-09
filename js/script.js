@@ -253,17 +253,31 @@ window.onYouTubeIframeAPIReady = function () {
    ATTIVA AUDIO AL PRIMO TAP
 ====================================== */
 
-function enableHeroVideoSound() {
+function enableHeroVideoSound(event) {
 
-    if (!heroYoutubePlayer) {
+    // Non interferire con il banner privacy
+    if (
+        event.target.closest(
+            "#iubenda-cs-banner, [class*='iubenda-cs']"
+        )
+    ) {
         return;
     }
 
-    heroYoutubePlayer.unMute();
+    // Verifica che il player YouTube sia pronto
+    if (
+        !heroYoutubePlayer ||
+        typeof heroYoutubePlayer.unMute !== "function" ||
+        typeof heroYoutubePlayer.setVolume !== "function"
+    ) {
+        return;
+    }
 
+    // Attiva l'audio
+    heroYoutubePlayer.unMute();
     heroYoutubePlayer.setVolume(100);
 
-
+    // Rimuove gli eventi dopo l'attivazione
     document.removeEventListener(
         "click",
         enableHeroVideoSound
