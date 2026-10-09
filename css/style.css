@@ -7781,3 +7781,17 @@ height: auto;
     }
 
 }
+
+/* SPAZIATURA SOTTO ANIMAZIONE 3D */
+
+.block-transition + .case-study {
+    padding-top: 60px;
+}
+
+@media (max-width: 600px) {
+
+    .block-transition + .case-study {
+        padding-top: 40px;
+    }
+
+}
