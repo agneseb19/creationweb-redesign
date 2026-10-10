@@ -1835,13 +1835,24 @@ _iub.csLangConfiguration = {
     </div>
 
 
-    <form
-        class="contact-form"
-        id="contactForm"
-        action="#"
-        method="post"
-    >
+   <form
+    class="contact-form"
+    id="contactForm"
+    action="invia-contatto.php"
+    method="post"
+>
 
+<!-- CAMPO ANTISPAM INVISIBILE -->
+<div class="form-honeypot" aria-hidden="true">
+    <label for="website">Lascia vuoto questo campo</label>
+    <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+    >
+</div>
 
         <!-- NOME -->
 
@@ -1913,10 +1924,11 @@ _iub.csLangConfiguration = {
             <label class="privacy-checkbox">
 
                 <input
-                    type="checkbox"
-                    name="privacy"
-                    required
-                >
+    type="checkbox"
+    name="privacy"
+    value="1"
+    required
+>
 
                 <span class="custom-checkbox"></span>
 
@@ -1942,22 +1954,24 @@ _iub.csLangConfiguration = {
 
         <!-- SUBMIT -->
 
-        <div class="form-submit form-field-full">
+        <!-- SUBMIT -->
+<div class="form-submit form-field-full">
+    <button
+        type="submit"
+        class="button button-primary contact-submit"
+    >
+        Richiedi informazioni
+        <span aria-hidden="true">→</span>
+    </button>
+</div>
 
-            <a
-    href="mailto:creationwebmail@gmail.com?subject=Richiesta%20informazioni&body=Ciao%20CreationWeb%2C%20vorrei%20ricevere%20maggiori%20informazioni%20sui%20vostri%20servizi."
-    class="button button-primary contact-submit"
->
-
-    Richiedi informazioni
-
-    <span aria-hidden="true">
-        →
-    </span>
-
-</a>
-
-        </div>
+        <p
+    class="form-feedback form-field-full"
+    id="formFeedback"
+    role="status"
+    aria-live="polite"
+    hidden
+></p>
 
 
     </form>
@@ -2067,6 +2081,45 @@ _iub.csLangConfiguration = {
 <script src="js/block-field.js"></script>
 
 <script src="js/animations.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const feedback = document.getElementById("formFeedback");
+
+    if (!feedback) return;
+
+    const url = new URL(window.location.href);
+    const stato = url.searchParams.get("contatto");
+
+    if (!stato) return;
+
+    feedback.hidden = false;
+
+    if (stato === "ok") {
+        feedback.textContent =
+            "Richiesta inviata! Ti ricontatteremo il prima possibile.";
+    } else if (stato === "attendi") {
+        feedback.textContent =
+            "Attendi un minuto prima di inviare un'altra richiesta.";
+        feedback.classList.add("is-error");
+    } else {
+        feedback.textContent =
+            "Non siamo riusciti a inviare la richiesta. " +
+            "Puoi contattarci a creationwebmail@gmail.com.";
+        feedback.classList.add("is-error");
+    }
+
+    url.searchParams.delete("contatto");
+
+    window.history.replaceState(
+        null,
+        "",
+        url.pathname + url.search + url.hash
+    );
+
+});
+</script>
 
 </body>
 

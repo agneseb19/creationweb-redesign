@@ -7795,3 +7795,40 @@ height: auto;
     z-index: 2147483647 !important;
     pointer-events: auto !important;
 }
+
+/* =========================================
+   CONTACT FORM — INVIO E FEEDBACK
+========================================= */
+
+/* CAMPO ANTISPAM */
+
+.form-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* PULSANTE DI INVIO */
+
+.contact-submit {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* MESSAGGI DEL MODULO */
+
+.form-feedback {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #DAFE03;
+}
+
+.form-feedback.is-error {
+    color: #FF8585;
+}
+
+.form-feedback[hidden] {
+    display: none;
+}
