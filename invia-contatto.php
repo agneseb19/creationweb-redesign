@@ -78,6 +78,87 @@ if (
     tornaAlModulo('errore');
 }
 
+// =========================================
+// CLOUDFLARE TURNSTILE - VERIFICA ANTISPAM
+// =========================================
+
+// Recupera il token generato da Cloudflare.
+$turnstileToken = leggiCampo('cf-turnstile-response');
+
+// Senza token la richiesta viene rifiutata.
+if (
+    $turnstileToken === '' ||
+    strlen($turnstileToken) > 2048
+) {
+    tornaAlModulo('errore');
+}
+
+// Carica la chiave privata dall'esterno di public_html.
+$configPath = dirname(__DIR__) . '/turnstile-config.php';
+
+if (!is_file($configPath)) {
+    error_log('Turnstile: configurazione mancante.');
+    tornaAlModulo('errore');
+}
+
+$turnstileSecret = require $configPath;
+
+if (
+    !is_string($turnstileSecret) ||
+    $turnstileSecret === ''
+) {
+    tornaAlModulo('errore');
+}
+
+// Controlla che PHP possa contattare Cloudflare.
+if (!function_exists('curl_init')) {
+    error_log('Turnstile: estensione cURL non disponibile.');
+    tornaAlModulo('errore');
+}
+
+// Invia il token a Cloudflare per la verifica.
+$curl = curl_init(
+    'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+);
+
+curl_setopt_array($curl, [
+    CURLOPT_POST => true,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POSTFIELDS => http_build_query([
+        'secret' => $turnstileSecret,
+        'response' => $turnstileToken
+    ]),
+    CURLOPT_CONNECTTIMEOUT => 5,
+    CURLOPT_TIMEOUT => 10
+]);
+
+$risposta = curl_exec($curl);
+
+$httpCode = curl_getinfo(
+    $curl,
+    CURLINFO_HTTP_CODE
+);
+
+curl_close($curl);
+
+// Interpreta la risposta di Cloudflare.
+$verifica = is_string($risposta)
+    ? json_decode($risposta, true)
+    : null;
+
+// Accetta soltanto verifiche valide per il sito di prova.
+if (
+    $httpCode !== 200 ||
+    !is_array($verifica) ||
+    ($verifica['success'] ?? false) !== true ||
+    ($verifica['hostname'] ?? '') !== 'test.creationweb.it' ||
+    ($verifica['action'] ?? '') !== 'contatti'
+) {
+    tornaAlModulo('errore');
+}
+
+// Verifica superata: il PHP può procedere con l'email.
+
 // Indirizzo che riceverà le richieste.
 $destinatario = 'creationwebmail@gmail.com';
 
