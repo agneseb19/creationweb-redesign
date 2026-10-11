@@ -146,12 +146,21 @@ $verifica = is_string($risposta)
     ? json_decode($risposta, true)
     : null;
 
-// Accetta soltanto verifiche valide per il sito di prova.
+    
+// Accetta verifiche valide per il sito di prova e quello ufficiale.
 if (
     $httpCode !== 200 ||
     !is_array($verifica) ||
     ($verifica['success'] ?? false) !== true ||
-    ($verifica['hostname'] ?? '') !== 'test.creationweb.it' ||
+    !in_array(
+        $verifica['hostname'] ?? '',
+        [
+            'test.creationweb.it',
+            'creationweb.it',
+            'www.creationweb.it'
+        ],
+        true
+    ) ||
     ($verifica['action'] ?? '') !== 'contatti'
 ) {
     tornaAlModulo('errore');
